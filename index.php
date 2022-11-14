@@ -1,3 +1,8 @@
-<?php
-
-echo 'Hello there 👋';
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+    <?php
+        echo 'Hello there 👋';  
+    ?>    
+</body>
