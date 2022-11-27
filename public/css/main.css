@@ -1,10 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
 
 #large_logo {
     text-align: left;
-    font: normal normal normal 102px/136px Gadugi;
+    font: normal normal normal 6em Gadugi;
     letter-spacing: 0px;
     color: #FFFFFF;
     width: 50%;
@@ -17,66 +21,11 @@ body {
     color: #FFFFFF;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    background: transparent linear-gradient(180deg, #2191F3 0%, #11237A 100%) 0% 0% no-repeat padding-box;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-container {
-    width: 50%;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    height: 25vh;
-
-    background: #FFFFFFE0 0% 0% no-repeat padding-box;
-    box-shadow: 10px 10px 6px #00000029;
-    border: 1px solid #707070;
-    border-radius: 21px;
-}
-
-button {
-    background: transparent linear-gradient(180deg, #2191F3 0%, #224470 100%) 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
-    border-radius: 46px;
-    width: 30%;
-    border: none;
-    color: white;
-    margin: 1em;
-    color: white;
-    line-height: 2.5em;
-}
-
-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #707070;
-    padding: 1em;
-    margin: 1em;
-    width: 85%;
-}
-
-.buttons_text {
-    text-align: left;
-    font: normal normal normal 20px Segoe UI;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-}
-
-.content_header {
+/* .content_header {
     background: #1E7ADA 0% 0% no-repeat padding-box;
     text-align: center;
-}
+} */
 
 .text_header {
     font: normal normal normal 4vh Arial;
@@ -117,9 +66,6 @@ ul {
     font: normal normal normal 20px/30px Gadugi;
     height: 100%;
     position: relative;
-    /* margin: 0 auto;
-    padding: 0;
-    width: calc(100% - 40%); */
 }
 
 li {
@@ -137,7 +83,6 @@ li i {
     display: inline-block;
     vertical-align: -5px;
     width: 1em;
-    /* text-align: center; */
 }
 
 #settings {
@@ -188,35 +133,4 @@ header {
 
 .text_header {
     font-size: 3.7vh;
-}
-
-@media only screen and (max-device-width: 420px) {
-    .container {
-        flex-direction: column;
-    }
-
-    * {
-        font-size: 36px;
-    }
-
-    .login-container, #logo {
-        width: 100%;
-    }
-
-    #logo {
-        font-size: 4em;
-        margin: 0.5em;
-    }
-
-    .buttons_text {
-        font: normal normal normal 30px Segoe UI;
-    }
-
-    form, input {
-        width: 80%;
-    }
-
-    form {
-        margin: auto;
-    }
 }
