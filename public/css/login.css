@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none !important;
+    border: 1px solid rgb(58, 81, 250);
+    box-shadow: 0 0 10px #719ECE;
+}
+
 body {
     margin: 0;
 }
@@ -46,13 +52,7 @@ body {
     margin-right: 2em;
 }
 
-/* .form-container {
-    margin: auto;
-    border: 3px solid blue;
-} */
-
 form {
-    /* height: 30vh; */
     padding: 2em;
 
     background: #FFFFFFE0 0% 0% no-repeat padding-box;
