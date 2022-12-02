@@ -36,6 +36,11 @@ body {
     text-align: center;
 }
 
+.logo_container_internal {
+    text-align: center;
+    width: 100%;
+}
+
 #logo {
     font: normal normal normal 6em Gadugi;
     color: #FFFFFF;
@@ -44,7 +49,7 @@ body {
 }
 
 .form_container {
-    height: 100vh;
+    max-height: 100vh;
     width: 50%;
     align-items: center;
 }
@@ -118,6 +123,63 @@ a {
     color: #1E7ED4;
 }
 
+@media (max-width: 1026px) {
+   .container {
+        display: flex;
+        flex-direction: column;
+   }
 
+   .logo_container {
+    width: 100%;
+    height: 7%;
+   }
+
+   .form_container {
+    width: 100%;
+    height: 93%;
+    text-align: center;
+    align-items: center;
+   }
+
+   #logo {
+    display: none;
+   }
+
+   .form_header {
+    text-align: center;
+   }
+
+   .registration {
+    width: 100%;
+   }
+
+   input {
+    padding: 0.7vw 1.2vw;
+    margin-left: 15%;
+   }
+
+   .sign_up_footer {
+    margin-bottom: 1em;
+   }
+}
+
+@media (max-width: 513px) {
+    .form_header_txt {
+        font-size: 2em;
+    }
+
+    .sign_up_button {
+        width: 20vh;
+        height: 5vh;
+    }
+
+    #sign_up_text {
+        font-size: 1.5em;
+    }
+
+    .sign_up_footer_txt {
+        font-size: 1em;
+    }
+}
 
 
