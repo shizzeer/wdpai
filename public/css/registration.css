@@ -123,6 +123,33 @@ a {
     color: #1E7ED4;
 }
 
+.logo_mobile {
+    text-align: center;
+    position: relative;
+}
+
+.logo_mobile i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2em;
+    font-size: 1.5em;
+    color: white;
+}
+
+.logo_mobile span {
+    font-family: 'Arial';
+    font-size: 1.2em;
+    color: white;
+}
+
+@media (min-width: 1027px) {
+    .logo_mobile {
+        display: none;
+    }
+}
+
 @media (max-width: 1026px) {
    .container {
         display: flex;
