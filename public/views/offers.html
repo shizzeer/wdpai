@@ -3,11 +3,18 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/offers.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
+    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
+    <!-- w ten sposob mamy dostep do elementow html -->
+    <script src="../nav.js" defer></script>
     <title>OUR OFFERS</title>
 </head>
 <body>
     <div class="base_container">
-        <nav>
+        <!-- <button class="mobile-nav-toggle" 
+        aria-controls="primary-navigation" 
+        aria-expanded="false">
+        </button> -->
+        <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <ul>
                 <li>
@@ -43,13 +50,15 @@
         <main>
             <header>
                 <div class="content_header">
+                    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    </button>
                     <span class="text_header">OUR OFFERS</span>
                 </div>
             </header>
             <section class="offers">
                 <div class="offer">
-                    <div class="offer_img">
-                        <img src="../img/offer1.svg" alt="First offer">
+                    <div class="offer_img_container">
+                        <img class="offer_img" src="../img/offer1.svg" alt="First offer">
                     </div>
                     <div class="offer_content">
                         <div class="offer_content_header">
@@ -72,8 +81,8 @@
                     </div>
                 </div>
                 <div class="offer">
-                    <div class="offer_img">
-                        <img src="../img/offer2.svg" alt="First offer">
+                    <div class="offer_img_container">
+                        <img class="offer_img" src="../img/offer2.svg" alt="First offer">
                     </div>
                     <div class="offer_content">
                         <div class="offer_content_header">
@@ -100,8 +109,8 @@
                     </div>
                 </div>
                 <div class="offer">
-                    <div class="offer_img">
-                        <img src="../img/offer3.svg" alt="First offer">
+                    <div class="offer_img_container">
+                        <img class="offer_img" src="../img/offer3.svg" alt="First offer">
                     </div>
                     <div class="offer_content">
                         <div class="offer_content_header">
@@ -128,8 +137,8 @@
                     </div>
                 </div>
                 <div class="offer">
-                    <div class="offer_img">
-                        <img src="../img/offer1.svg" alt="First offer">
+                    <div class="offer_img_container">
+                        <img class="offer_img" src="../img/offer1.svg" alt="First offer">
                     </div>
                     <div class="offer_content">
                         <div class="offer_content_header">
@@ -156,8 +165,8 @@
                     </div>
                 </div>
                 <div class="offer">
-                    <div class="offer_img">
-                        <img src="../img/offer2.svg" alt="First offer">
+                    <div class="offer_img_container">
+                        <img class="offer_img" src="../img/offer2.svg" alt="First offer">
                     </div>
                     <div class="offer_content">
                         <div class="offer_content_header">
@@ -183,8 +192,6 @@
                         </button>
                     </div>
                 </div>
-                <!-- <div class="offer"><img src="../img/offer2.svg" alt="First offer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus inventore repudiandae saepe quod quis architecto aliquam ratione, earum veritatis nisi laborum magnam ea quo possimus repellendus voluptatum, illum nemo molestiae?</div>
-                <div class="offer"><img src="../img/offer3.svg" alt="First offer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, repudiandae obcaecati fugiat hic aut nostrum. Accusantium dolorum ipsam amet laudantium unde, quod, nihil velit, corrupti laboriosam repellendus reiciendis nam ut?</div> -->
             </section>
         </main>
     </div>
