@@ -1,0 +1,10 @@
+.footnote {
+    font-size: 0.8vw;
+    color: #2699FB;
+}
+
+@media (max-device-width: 800px) {
+    .footnote {
+        font-size: 1.7rem;
+    }
+}
