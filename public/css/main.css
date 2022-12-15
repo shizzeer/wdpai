@@ -135,13 +135,13 @@ header {
 }
 
 @media (max-device-width: 650px) {
-    #settings {
+    /* #settings {
         bottom: 7em;
-    }
+    } */
 
-    li {
+    /* li {
         margin-top: 8vw;
-    }
+    } */
     .small_logo {
         font-size: 4vw;
     }
@@ -160,7 +160,8 @@ header {
         position: fixed;
         width: 40%;
         padding: 0.3em;
-
+        z-index: 9999;
+        
         transform: translateX(-100%);
         transition: transform 350ms ease-out;
     }

@@ -1,0 +1,66 @@
+.contact {
+    height: 100%;
+    overflow-y: auto;
+    background-color: #e8e6e6;
+}
+
+.contact_container {
+    position: relative;
+    height: 100%;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F1F9FF;
+    padding: 25px;
+    width: 50%;
+}
+
+input {
+    width: 60%;
+}
+
+label,
+input,
+textarea {
+    font-size: 1.2em;
+    width: 60%;
+    color: #333;
+}
+
+textarea {
+    width: 100% !important;
+    height: 500px;
+}
+
+button {
+    width: 30%;
+    padding: 0.2em;
+    font-size: 1.2em;
+    border-radius: 15px;
+    outline: none;
+    margin-top: 10px;
+}
+
+@media (max-device-width: 650px) {
+    form {
+        font-size: 2em;
+    }
+}
+
+@media (max-device-width: 800px) {
+    form {
+        width: 100%;
+    }
+
+    .mobile-nav-toggle {
+        top: 1rem !important;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        top: 1.7rem !important;
+    }
+}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/offers.css">
@@ -10,7 +9,6 @@
     <script src="../nav.js" defer></script>
     <title>APPOINTMENTS</title>
 </head>
-
 <body>
     <div class="base_container">
         <!-- <button class="mobile-nav-toggle" 
@@ -29,16 +27,12 @@
                     <a href="#" class="button">patients</a>
                 </li>
                 <li>
-                    <i class="fa-sharp fa-solid fa-comment-dots"></i>
-                    <a href="#" class="button">calendar</a>
-                </li>
-                <li>
                     <i class="fa-solid fa-message"></i>
                     <a href="#" class="button">communicator</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-circle-info"></i>
-                    <a href="#" class="button">requests</a>
+                    <a href="#" class="button">prescriptions</a>
                 </li>
                 <li id="settings">
                     <i class="fa-solid fa-gear"></i>
@@ -58,162 +52,184 @@
                     <span class="text_header">APPOINTMENTS</span>
                 </div>
             </header>
-            <section class="offers">
-                <div class="offer">
-                    <div class="offer_img_container">
-                        <img class="offer_img" src="../img/offers/offer1.svg" alt="First offer">
-                    </div>
-                    <div class="offer_content">
-                        <div class="offer_content_header">
-                            <span class="offer_name">
-                                OFFER NAME
-                            </span>
-                        </div>
-                        <div class="offer_content_internal">
-                            <span class="offer_short_desc">
-                                Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit voluptartem
-                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi ropeior
-                                architecto beatae vitae dicta sunt.Culpa qui officia deserunt mollit anim id est
-                                laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit voluptartem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo inventore
-                                veritatis et quasi ropeior architecto beatae vitae dicta sunt.
-                            </span>
-                        </div>
-                        <button class="read_more">
-                            READ MORE
-                        </button>
-                    </div>
+            <section class="appointments">
+                <div class="filter">
+                    <form class="filter_form">
+                        <label for="start-date">Start date:</label>
+                        <input type="date" id="start-date">
+                        <label for="end-date">End date:</label>
+                        <input type="date" id="end-date">
+                        <button type="submit">Find</button>
+                        <button>Today</button>
+                    </form>
                 </div>
-                <div class="offer">
-                    <div class="offer_img_container">
-                        <img class="offer_img" src="../img/offers/offer2.svg" alt="First offer">
-                    </div>
-                    <div class="offer_content">
-                        <div class="offer_content_header">
-                            <span class="offer_name">
-                                OFFER NAME
-                            </span>
-                        </div>
-                        <div class="offer_content_internal">
-                            <span class="offer_short_desc">
-                                Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit
-                                voluptartem
-                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi
-                                ropeior
-                                architecto beatae vitae dicta sunt.Culpa qui officia deserunt mollit anim id est
-                                laborum. Sed ut perspiciatis
-                                unde omnis
-                                iste natus error sit voluptartem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo
-                                inventore
-                                veritatis et quasi ropeior architecto beatae vitae dicta sunt.
-                            </span>
-                        </div>
-                        <button class="read_more">
-                            READ MORE
-                        </button>
-                    </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="offer">
-                    <div class="offer_img_container">
-                        <img class="offer_img" src="../img/offers/offer3.svg" alt="First offer">
-                    </div>
-                    <div class="offer_content">
-                        <div class="offer_content_header">
-                            <span class="offer_name">
-                                OFFER NAME
-                            </span>
-                        </div>
-                        <div class="offer_content_internal">
-                            <span class="offer_short_desc">
-                                Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit
-                                voluptartem
-                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi
-                                ropeior
-                                architecto beatae vitae dicta sunt.Culpa qui officia deserunt mollit anim id est
-                                laborum. Sed ut perspiciatis
-                                unde omnis
-                                iste natus error sit voluptartem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo
-                                inventore
-                                veritatis et quasi ropeior architecto beatae vitae dicta sunt.
-                            </span>
-                        </div>
-                        <button class="read_more">
-                            READ MORE
-                        </button>
-                    </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="offer">
-                    <div class="offer_img_container">
-                        <img class="offer_img" src="../img/offers/offer1.svg" alt="First offer">
-                    </div>
-                    <div class="offer_content">
-                        <div class="offer_content_header">
-                            <span class="offer_name">
-                                OFFER NAME
-                            </span>
-                        </div>
-                        <div class="offer_content_internal">
-                            <span class="offer_short_desc">
-                                Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit
-                                voluptartem
-                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi
-                                ropeior
-                                architecto beatae vitae dicta sunt.Culpa qui officia deserunt mollit anim id est
-                                laborum. Sed ut perspiciatis
-                                unde omnis
-                                iste natus error sit voluptartem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo
-                                inventore
-                                veritatis et quasi ropeior architecto beatae vitae dicta sunt.
-                            </span>
-                        </div>
-                        <button class="read_more">
-                            READ MORE
-                        </button>
-                    </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="offer">
-                    <div class="offer_img_container">
-                        <img class="offer_img" src="../img/offers/offer2.svg" alt="First offer">
-                    </div>
-                    <div class="offer_content">
-                        <div class="offer_content_header">
-                            <span class="offer_name">
-                                OFFER NAME
-                            </span>
-                        </div>
-                        <div class="offer_content_internal">
-                            <span class="offer_short_desc">
-                                Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit
-                                voluptartem
-                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi
-                                ropeior
-                                architecto beatae vitae dicta sunt.Culpa qui officia deserunt mollit anim id est
-                                laborum. Sed ut perspiciatis
-                                unde omnis
-                                iste natus error sit voluptartem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo
-                                inventore
-                                veritatis et quasi ropeior architecto beatae vitae dicta sunt.
-                            </span>
-                        </div>
-                        <button class="read_more">
-                            READ MORE
-                        </button>
-                    </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <td>Name and surname</td>
+                            <td>Date of birth</td>
+                        </tr>
+                        <tr>
+                            <td>Identity number</td>
+                            <td>Patient ID</td>
+                        </tr>
+                        <tr>
+                            <td>Date of visit | HH:MM:SS</td>
+                            <td rowspan="2">Done<br>
+                                Not done
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prescription / Comments</td>
+                        </tr>
+                    </table>
                 </div>
             </section>
         </main>
