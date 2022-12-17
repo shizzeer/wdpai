@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-message"></i>
-                    <a href="#" class="button">contact</a>
+                    <a href="contact.html" class="button">contact</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-circle-info"></i>
@@ -59,28 +59,15 @@
             </header>
             <section class="contact">
                 <div class="contact_header">
-                    <a href="new_message.html" class="general_button">New Message</a>
-                    <a href="#" class="general_button">Clear Messages</a>
+                    <a href="contact.html" class="general_button">Messages</a>
                 </div>
                 <div class="contact_container">
-                    <div class="divider"></div>
-                    <div class="msg_container">
-                        <div class="subject_and_name">
-                            <span class="name">Josh Wayne</span><br>
-                            <a href="#" class="subject_href"><span class="subject">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, eum pariatur ab quo cum, iusto amet quam enim impedit non nihil, quisquam illum. Harum, aliquid repellat accusantium doloribus exercitationem doloremque.</span></a>
-                        </div>
-                        <div class="msg_date">2022-12-17</div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="msg_container">
-                        <div class="subject_and_name">
-                            <span class="name">John Wayne</span><br>
-                            <a href="#" class="subject_href"><span class="subject">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem similique architecto in laudantium ad consequatur ab perferendis tempora tenetur, at dolores magni eveniet ducimus eaque nihil adipisci possimus libero. Sint.</span></a>
-                        </div>
-                        <div class="msg_date">2022-12-17</div>
-                        <!-- <div class="msg_delete"><img class="delete_msg" src="../img/delete.svg"></div> -->
-                    </div>
-                    <div class="divider"></div>
+                    <form>
+                        <input type="text" id="name" placeholder="To"><br><br>
+                        <input type="text" id="name" placeholder="Subject"><br><br>
+                        <textarea id="message"></textarea>
+                        <button type="submit" class="general_button">Send</button>
+                    </form>
                 </div>
             </section>
         </main>

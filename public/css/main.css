@@ -98,6 +98,7 @@ li:last-child {
 
 
 .button {
+    cursor: pointer;
     border: 1px solid #FFFFFF;
     border-radius: 1.3em;
     color: white;
@@ -109,6 +110,10 @@ li:last-child {
     text-align: center;
     display: inline-block;
     vertical-align: 5px;
+}
+
+button {
+    cursor: pointer;
 }
 
 main {

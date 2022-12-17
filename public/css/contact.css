@@ -1,7 +1,15 @@
+*:focus {
+    outline: none !important;
+    border: 1px solid rgb(58, 81, 250);
+    box-shadow: 0 0 10px #719ECE;
+}
+
 .contact {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     overflow-y: auto;
-    background-color: #e8e6e6;
+    background-color: #c8ddf7;
 }
 
 .contact_container {
@@ -45,9 +53,133 @@ button {
     margin-top: 10px;
 }
 
+.contact_header {
+    background-color: #afd9f5;
+    padding: 1rem;
+}
+
+.general_button {
+    margin-left: 0.4rem;
+    align-items: center;
+    appearance: none;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: CircularStd, sans-serif;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 6px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s, background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.header_button:active,
+.header_button:focus {
+    outline: none;
+}
+
+.header_button:hover {
+    background-position: -20px -20px;
+}
+
+.header_button:focus:not(:active) {
+    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.msg_date {
+    margin-left: 35vw;
+}
+
+.msg_container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.name {
+    font-weight: bold;
+    color:rgb(58, 81, 250);
+    width: 20vw;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subject {
+    width: 30vw;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subject_href {
+    text-decoration: none;
+    color: black;
+}
+
+.delete_msg {
+    height: 1.3rem;
+    /* margin-left: 0.7rem; */
+    color: red;
+}
+
+.msg_delete {
+    margin-top: -0.1rem;
+    margin-left: 2rem;
+}
+
+@media (max-device-width: 550px) {
+    .name,
+    .subject {
+        font-size: 2.2rem;
+    }
+
+    .subject {
+        width: 60vw;
+    }
+
+    .msg_date {
+        margin-left: 20vw;
+        font-size: 1.5rem;
+    }
+
+    .general_button {
+        font-size: 2rem !important;
+    }
+}
+
 @media (max-device-width: 650px) {
     form {
         font-size: 2em;
+    }
+
+    .general_button {
+        font-size: 0.8em;
     }
 }
 
