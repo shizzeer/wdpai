@@ -4,14 +4,6 @@
     box-shadow: 0 0 10px #719ECE;
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-    background-color: #c8ddf7;
-}
-
 .contact_container {
     position: relative;
     height: 100%;
@@ -23,6 +15,8 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #F1F9FF;
+    box-shadow: 10px 10px 6px #00000029;
+    border-radius: 21px;
     padding: 25px;
     width: 50%;
 }
@@ -56,50 +50,6 @@ button {
 .contact_header {
     background-color: #afd9f5;
     padding: 1rem;
-}
-
-.general_button {
-    margin-left: 0.4rem;
-    align-items: center;
-    appearance: none;
-    background-color: #3EB2FD;
-    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
-    background-size: calc(100% + 20px) calc(100% + 20px);
-    border-radius: 100px;
-    border-width: 0;
-    box-shadow: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: CircularStd, sans-serif;
-    font-size: 1rem;
-    height: auto;
-    justify-content: center;
-    line-height: 1.5;
-    padding: 6px 20px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color .2s, background-position .2s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: top;
-    white-space: nowrap;
-}
-
-.header_button:active,
-.header_button:focus {
-    outline: none;
-}
-
-.header_button:hover {
-    background-position: -20px -20px;
-}
-
-.header_button:focus:not(:active) {
-    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
 .divider {

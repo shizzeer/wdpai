@@ -1,0 +1,45 @@
+.about {
+    height: 100%;
+    overflow-y: auto;
+    color: #165b96;
+    padding: 2rem;
+    text-align: justify;
+}
+
+.personnel_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 60%;
+    box-shadow: 10px 10px 6px #00000029;
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+
+.circular_avatar {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.personal_data {
+    border: 3px solid aqua;
+    width: 75%;
+    margin-left: 5%;
+}
+
+.header_div {
+    width: 30%;
+    padding: 1rem;
+}
+
+.header {
+    font-size: 2rem;
+}

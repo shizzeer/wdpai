@@ -1,6 +1,3 @@
-/* TO DO: Ustawic rozmiar czcionki dla mniejszych urzadzen zeby nie bylo
-overflow przez przyciski */
-
 table,
 td
 {
@@ -20,7 +17,6 @@ table {
 .appointments {
     height: 100%;
     overflow-y: auto;
-    background-color: #e8e6e6;
 }
 
 .appointment {
@@ -28,12 +24,12 @@ table {
     margin: auto;
     text-align: center;
     padding: 2%;
-    overflow-y: auto;
 }
 
 .filter {
     width: 100%;
-    padding: 1em;
+    background-color: #afd9f5;
+    padding: 1rem;
 }
 
 @media (max-device-width: 800px) {
