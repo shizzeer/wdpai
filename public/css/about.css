@@ -7,39 +7,81 @@
 }
 
 .personnel_container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 1.1em;
 }
 
 .person {
     display: flex;
     flex-direction: row;
     background-color: white;
-    width: 60%;
+    /* width: 60%; */
     box-shadow: 10px 10px 6px #00000029;
     border-radius: 10px;
-    padding: 1.2rem;
+    padding: 2rem;
+}
+
+.avatar {
+    margin-left: -5rem;
 }
 
 .circular_avatar {
-    width: 120px !important;
-    height: 120px !important;
+    width: 140px !important;
+    height: 140px !important;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid black;
 }
 
 .personal_data {
-    border: 3px solid aqua;
     width: 75%;
     margin-left: 5%;
 }
 
 .header_div {
-    width: 30%;
     padding: 1rem;
 }
 
 .header {
     font-size: 2rem;
+}
+
+.name_and_surname {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.specialization {
+    font-size: 1.2rem;
+}
+
+.contact_data {
+    width: 30%;
+    padding: 1rem;
+}
+
+.contact_content {
+    font-size: 1.3rem;
+}
+
+@media (max-device-width: 480px) {
+    /* .personnel_container {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    .name_and_surname {
+        font-size: 1.8rem;
+    }
+
+    .specialization {
+        font-size: 1.5rem;
+    }
+
+    .read_more {
+        margin-left: -1px !important;
+    }
+
+
 }
