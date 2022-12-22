@@ -52,12 +52,6 @@ button {
     padding: 1rem;
 }
 
-.divider {
-    height: 1px;
-    width: 100%;
-    background-color: black;
-}
-
 .msg_date {
     margin-left: 35vw;
 }
@@ -101,6 +95,12 @@ button {
 .msg_delete {
     margin-top: -0.1rem;
     margin-left: 2rem;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
 }
 
 @media (max-device-width: 550px) {

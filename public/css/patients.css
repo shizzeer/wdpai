@@ -1,0 +1,63 @@
+.patients {
+    height: 100%;
+    overflow-y: auto;
+    color: #165b96;
+    padding: 2rem;
+    text-align: justify;
+}
+
+.patients_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 1.1em;
+    font-family: Arial;
+}
+
+.patient {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 10px 10px 6px #00000029;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.patient_id {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.name_and_birth_date {
+    font-size: 1.5rem;
+    margin-top: 1em;
+}
+
+.medications {
+    font-size: 1.5rem;
+}
+
+.prescriptions {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.filter {
+    width: 100%;
+    background-color: #afd9f5;
+    padding: 1rem;
+}
+
+@media (max-device-width: 800px) {
+    .filter {
+        font-size: 2rem;
+    }
+
+    input {
+        font-size: 2rem;
+    }
+}

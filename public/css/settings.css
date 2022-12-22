@@ -1,0 +1,62 @@
+.divider {
+    height: 1px;
+    width: 90%;
+    background-color: blue;
+    margin: 0 auto;
+}
+
+.settings_container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 13%;
+    font-family: Arial;
+}
+
+.settings_header {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+}
+
+.setting {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    font-size: 2rem;
+    padding: 0.6rem;
+}
+
+.key {
+    flex: 2;
+    color: #090909;
+    font-weight: bold;
+}
+
+.value {
+    position: relative;
+    flex: 4;
+}
+
+.setting_in {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #504D4D;
+    font-size: 2rem;
+}
+
+.save_container {
+    flex: 0.4;
+    color: #1E78D6;
+}
+
+.save {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: #1E78D6;
+}
