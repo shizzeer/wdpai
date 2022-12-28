@@ -3,31 +3,31 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/offers.css">
-    <link rel="stylesheet" type="text/css" href="../css/booking.css">
+    <link rel="stylesheet" type="text/css" href="../css/write_prescription.css">
     <link rel="stylesheet" type="text/css" href="../css/form.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
     <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
     <!-- w ten sposob mamy dostep do elementow html -->
     <script src="../nav.js" defer></script>
-    <title>RESERVATIONS</title>
+    <title>PRESCRIPTIONS</title>
 </head>
 
 <body>
     <div class="base_container">
+        <!-- <button class="mobile-nav-toggle" 
+        aria-controls="primary-navigation" 
+        aria-expanded="false">
+        </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <ul>
                 <li>
                     <i class="fa-solid fa-book"></i>
-                    <a href="reservations.html" class="button">reservations</a>
+                    <a href="#" class="button">appointments</a>
                 </li>
                 <li>
                     <i class="fa-light fa-percent"></i>
-                    <a href="discounts.html" class="button">discounts</a>
-                </li>
-                <li>
-                    <i class="fa-sharp fa-solid fa-comment-dots"></i>
-                    <a href="opinions.html" class="button">opinions</a>
+                    <a href="patients.html" class="button">patients</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-message"></i>
@@ -35,7 +35,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-circle-info"></i>
-                    <a href="about.html" class="button">about</a>
+                    <a href="#" class="button">prescriptions</a>
                 </li>
                 <li id="settings">
                     <i class="fa-solid fa-gear"></i>
@@ -52,42 +52,34 @@
                 <div class="content_header">
                     <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
                     </button>
-                    <span class="text_header">RESERVATIONS</span>
+                    <span class="text_header">PRESCRIPTIONS</span>
                 </div>
             </header>
             <section class="column_content">
                 <div class="section_header">
-                    <a href="reservations.html" class="general_button">Reservations</a>
-                    <a href="#" class="general_button">Book a visit</a>
+                    <a href="prescriptions.html" class="general_button">Prescriptions</a>
+                    <a href="#" class="general_button">Write a prescription</a>
                 </div>
-                <div class="reservations_container">
+                <div class="internal_container">
                     <form>
                         <div class="form-group">
-                            <label for="doctor">Preferred Doctor:</label><br>
-                            <select id="doctor" name="doctor" class="form-control" required>
-                                <option value="Dr. Smith">Dr. Smith</option>
-                                <option value="Dr. Johnson">Dr. Johnson</option>
-                                <option value="Dr. Williams">Dr. Williams</option>
-                            </select>
+                            <label for="patient_id_number">Identity number:</label><br>
+                            <input type="text" id="patient_id_number" name="patient_id_number" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="date">Preferred Date:</label><br>
-                            <input type="date" id="date" name="date" class="form-control" required>
+                            <label for="medications">Medications:</label><br>
+                            <textarea name="comments" id="medications" name="medications" class="form-control area"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="time">Preferred Time:</label><br>
-                            <input type="time" id="time" name="time" class="form-control" required>
+                            <label for="prescription_date">Prescription date:</label><br>
+                            <input type="date" id="prescription_date" name="prescription_date" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="time">Discount code:</label><br>
-                            <input type="text" id="discount_code" name="discount_code" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Additional comments:</label><br>
-                            <textarea name="comments" class="form-control area"></textarea>
+                            <label for="treatment_date">Treatment date:</label><br>
+                            <input type="date" id="treatment_date" name="treatment_date" class="form-control">
                         </div>
                         <br>
-                        <input type="submit" value="Book Appointment" class="general_button btn">
+                        <input type="submit" value="Save" class="general_button btn">
                     </form>
                 </div>
             </section>

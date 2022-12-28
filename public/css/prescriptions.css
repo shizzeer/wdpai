@@ -1,0 +1,100 @@
+.prescriptions {
+    height: 100%;
+    overflow-y: auto;
+    font-family: Arial;
+}
+
+.prescription {
+    width: 100%;
+    margin: auto;
+    padding: 2%;
+}
+
+table {
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    /* scalanie krawędzi tabeli */
+}
+
+td {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.row_container {
+    position: relative;
+}
+
+.left_corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+}
+
+.prescription_data {
+    padding: 0.7em;
+}
+
+.medications_list {
+    display: flex; 
+    flex-direction: column;
+    padding: 0.7em;
+}
+
+.medicine {
+    padding-bottom: 1em;
+}
+
+.doctor_data {
+    text-align: center;
+    padding: 0.7em;
+}
+
+.filter {
+    width: 100%;
+    background-color: #afd9f5;
+    padding: 1rem;
+}
+
+.flexible_row {
+    width: 30%;
+}
+
+@media (max-device-width: 800px) {
+
+    input,
+    label,
+    button {
+        /* width: 600px; */
+        font-size: 2rem;
+        margin-left: 0.5rem;
+    }
+
+    .flexible_row {
+        width: 40%;
+    }
+
+    table {
+        font-size: 2rem;
+    }
+
+    li {
+        font-size: 2.2rem;
+    }
+
+    .filter_form {
+        display: flex;
+        flex-direction: column;
+    }
+        
+    label {
+        margin-top: 0.4em;
+    }
+    
+    button {
+        margin-top: 0.4em;
+        font-size: 2rem;
+    }
+}

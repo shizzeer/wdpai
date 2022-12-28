@@ -57,7 +57,21 @@
         font-size: 2rem;
     }
 
+    .filter_form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 0.4em;
+    }
+
     input {
+        font-size: 2rem;
+    }
+
+    button {
+        margin-top: 0.4em;
         font-size: 2rem;
     }
 }
