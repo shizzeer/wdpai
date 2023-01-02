@@ -20,4 +20,11 @@ Routing::get('appointments', 'DefaultController');
 Routing::get('patients', 'DefaultController');
 Routing::get('prescriptions', 'DefaultController');
 Routing::get('write_prescription', 'DefaultController');
-Routing::run($path);
+
+Routing::post('login', 'SecurityController');
+
+if ($path == '') {
+    Routing::run('index');
+} else {
+    Routing::run($path);
+}
