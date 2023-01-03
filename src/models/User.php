@@ -4,23 +4,20 @@ namespace models;
 
 class User
 {
-    private $id;
     private $name;
     private $surname;
     private $email;
     private $password;
     private $dateOfBirth;
-    private $address;
     private $phoneNumber;
     private $identityNumber;
 
 
-    public function __construct(string $id, string $name, string $surname,
+    public function __construct(string $name, string $surname,
                                 string $email, string $password,
                                 string $dateOfBirth, string $phoneNumber,
                                 string $identityNumber)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->surname = $surname;
         $this->email = $email;
@@ -28,16 +25,6 @@ class User
         $this->dateOfBirth = $dateOfBirth;
         $this->phoneNumber = $phoneNumber;
         $this->identityNumber = $identityNumber;
-    }
-
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    public function setId(string $id)
-    {
-        $this->id = $id;
     }
 
     public function getName(): string
