@@ -13,11 +13,12 @@ class User
     private $identityNumber;
 
 
-    public function __construct(string $name, string $surname,
+    public function __construct(int $id, string $name, string $surname,
                                 string $email, string $password,
                                 string $dateOfBirth, string $phoneNumber,
-                                string $identityNumber)
+                                string $identityNumber, string $role)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->surname = $surname;
         $this->email = $email;
@@ -25,6 +26,12 @@ class User
         $this->dateOfBirth = $dateOfBirth;
         $this->phoneNumber = $phoneNumber;
         $this->identityNumber = $identityNumber;
+        $this->role = $role;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     public function getName(): string
@@ -95,5 +102,15 @@ class User
     public function setIdentityNumber(string $identityNumber)
     {
         $this->identityNumber = $identityNumber;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): void
+    {
+        $this->role = $role;
     }
 }
