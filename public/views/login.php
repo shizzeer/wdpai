@@ -1,3 +1,19 @@
+<?php
+    require_once __DIR__.'/../../src/controllers/SessionController.php';
+//    session_unset();
+//    session_destroy();
+    session_start();
+    $sessionController = new SessionController();
+    if (isset($_SESSION['sessionId'])) {
+        if (!$sessionController->didSessionExpired($_SESSION['sessionId'])) {
+            if ($_SESSION['userRole'] === 'patient')
+                header("Location: {$sessionController->getUrl()}/offers");
+            else if ($_SESSION['userRole'] === 'doctor')
+                header("Location: {$sessionController->getUrl()}/appointments");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/login.css">
