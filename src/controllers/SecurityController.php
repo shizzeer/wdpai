@@ -7,6 +7,7 @@ use repository\SessionRepository;
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/SessionRepository.php';
 require_once 'SessionController.php';
 
 class SecurityController extends AppController
@@ -15,18 +16,7 @@ class SecurityController extends AppController
     {
         session_start();
         $sessionController = new SessionController();
-        // If session is valid then user is automatically logged in
-        if (isset($_SESSION['sessionId']) && !$sessionController->didSessionExpired($_SESSION['sessionId']))
-        {
-            if (isset($_SESSION['role']))
-            {
-                if ($_SESSION['role'] == 'patient')
-                    header("Location: {$this->getUrl()}/offers");
-                else
-                    header("Location: {$this->getUrl()}/appointments");
-                return;
-            }
-        }
+        $sessionRepository = new SessionRepository();
 
         if (!$this->isPost())
         {
@@ -43,17 +33,36 @@ class SecurityController extends AppController
         {
             return $this->render('login', ['messages' => ['Wrong username or password']]);
         }
-        // New session created
-        $_SESSION['userId'] = $user->getId();
-        $_SESSION['remoteIP'] = $_SERVER['REMOTE_ADDR'];
-        $_SESSION['role'] = $user->getRole();
-        $_SESSION['lastActivity'] = time();
+        // New session created and added to db
+        $sessionController->createSession($user);
 
-        // TODO: Zapisac nowa sesje do bazy danych
-
-        if ($_SESSION['role'] == 'patient')
-            header("Location: {$this->getUrl()}/offers");
-        else
+        if ($_SESSION['userRole'] === 'doctor')
             header("Location: {$this->getUrl()}/appointments");
+        else
+            header("Location: {$this->getUrl()}/offers");
+    }
+
+    public function logout()
+    {
+        $sessionController = new SessionController();
+        if (isset($_SESSION['sessionId'])) {
+            $sessionController->removeSession();
+            header("Location: {$this->getUrl()}/login");
+            echo "Sesja usunieta";
+        }
+    }
+
+    public function authorizationHandler(string $userRole)
+    {
+        session_start();
+        $sessionController = new SessionController();
+        if (!isset($_SESSION['sessionId']) || $_SESSION['userRole'] !== $userRole) {
+            header("Location: {$sessionController->getUrl()}/not_authorized");
+        }
+        if (isset($_SESSION['sessionId'])) {
+            if ($sessionController->didSessionExpired($_SESSION['sessionId'])) {
+                header("Location: {$sessionController->getUrl()}/login");
+            }
+        }
     }
 }

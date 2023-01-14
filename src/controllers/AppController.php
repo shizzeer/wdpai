@@ -13,7 +13,7 @@ class AppController {
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 
-    protected function getUrl(): string
+    public function getUrl(): string
     {
         return $this->url;
     }
