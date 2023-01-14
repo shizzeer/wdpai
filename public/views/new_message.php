@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="login" class="button">logout</a>
+                    <a href="logout" class="button">logout</a>
                 </li>
             </ul>
         </nav>

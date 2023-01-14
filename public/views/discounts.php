@@ -1,5 +1,10 @@
-<!DOCTYPE html>
+<?php
+    require_once __DIR__.'/../../src/controllers/SecurityController.php';
+    $securityController = new SecurityController();
+    $securityController->authorizationHandler('patient');
+?>
 
+<!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
@@ -41,7 +46,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="login" class="button">logout</a>
+                    <a href="logout" class="button">logout</a>
                 </li>
             </ul>
         </nav>
