@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'Routing.php';
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
@@ -20,6 +21,8 @@ Routing::get('patients', 'DefaultController');
 Routing::get('prescriptions', 'DefaultController');
 Routing::get('write_prescription', 'DefaultController');
 
+Routing::get('logout', 'SecurityController');
+Routing::get('not_authorized', 'DefaultController');
 Routing::post('login', 'SecurityController');
 
 if ($path == '') {
