@@ -21,36 +21,7 @@
     <div class="base_container">
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
-            <ul>
-                <li>
-                    <i class="fa-solid fa-book"></i>
-                    <a href="reservations" class="button">reservations</a>
-                </li>
-                <li>
-                    <i class="fa-light fa-percent"></i>
-                    <a href="discounts" class="button">discounts</a>
-                </li>
-                <li>
-                    <i class="fa-sharp fa-solid fa-comment-dots"></i>
-                    <a href="opinions" class="button">opinions</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-message"></i>
-                    <a href="contact" class="button">contact</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-circle-info"></i>
-                    <a href="#" class="button">about</a>
-                </li>
-                <li id="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="settings" class="button">settings</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="logout" class="button">logout</a>
-                </li>
-            </ul>
+            <?php include "menu.php"; ?>
         </nav>
         <main>
             <header>

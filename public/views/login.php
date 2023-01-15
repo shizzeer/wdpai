@@ -1,10 +1,10 @@
 <?php
     require_once __DIR__.'/../../src/controllers/SessionController.php';
-//    session_unset();
-//    session_destroy();
+    require_once __DIR__.'/../../src/repository/SessionRepository.php';
     session_start();
     $sessionController = new SessionController();
-    if (isset($_SESSION['sessionId'])) {
+    $sessionRepository = new SessionRepository();
+    if (isset($_SESSION['sessionId']) || $sessionRepository->getSession($_SERVER['REMOTE_ADDR'])) {
         if (!$sessionController->didSessionExpired($_SESSION['sessionId'])) {
             if ($_SESSION['userRole'] === 'patient')
                 header("Location: {$sessionController->getUrl()}/offers");

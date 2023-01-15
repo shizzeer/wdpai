@@ -17,10 +17,6 @@
 </head>
 <body>
     <div class="base_container">
-        <!-- <button class="mobile-nav-toggle" 
-        aria-controls="primary-navigation" 
-        aria-expanded="false">
-        </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <ul>
