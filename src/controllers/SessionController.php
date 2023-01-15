@@ -1,13 +1,12 @@
 <?php
 
-use repository\SessionRepository;
 require_once __DIR__.'/../repository/SessionRepository.php';
 require_once 'AppController.php';
 
 class SessionController extends AppController
 {
 
-    public function createSession($user)
+    public function createNewSession($user)
     {
         $sessionRepository = new SessionRepository();
 
@@ -34,8 +33,8 @@ class SessionController extends AppController
         session_start();
 
         $sessionRepository = new SessionRepository();
-        // Session expires after 30 days
-        if (isset($_SESSION['startedAt']) && (time() - $_SESSION['startedAt']) > 30 * 24 * 60 * 60)
+        $sessionValidTime = 30 * 24 * 60 * 60; // 30 days
+        if (isset($_SESSION['startedAt']) && (time() - $_SESSION['startedAt']) > $sessionValidTime)
         {
             session_unset();
             session_destroy();

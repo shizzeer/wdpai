@@ -1,11 +1,6 @@
 <?php
 
-namespace repository;
-
-use models\User;
-use models\Session;
-use PDO;
-
+require_once __DIR__.'/../models/User.php';
 require_once 'Repository.php';
 
 class UserRepository extends Repository
