@@ -63,6 +63,10 @@ class DefaultController extends AppController {
     public function write_prescription() {
         $this->render('write_prescription');
     }
+
+    public function not_authorized() {
+        $this->render('not_authorized');
+    }
 }
 
 ?>

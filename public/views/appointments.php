@@ -1,3 +1,9 @@
+<?php
+    require_once __DIR__.'/../../src/controllers/SecurityController.php';
+    $securityController = new SecurityController();
+    $securityController->authorizationHandler('doctor');
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
@@ -11,10 +17,6 @@
 </head>
 <body>
     <div class="base_container">
-        <!-- <button class="mobile-nav-toggle" 
-        aria-controls="primary-navigation" 
-        aria-expanded="false">
-        </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <ul>
@@ -40,7 +42,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="login" class="button">logout</a>
+                    <a href="logout" class="button">logout</a>
                 </li>
             </ul>
         </nav>

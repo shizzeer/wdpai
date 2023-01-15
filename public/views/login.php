@@ -1,3 +1,19 @@
+<?php
+    require_once __DIR__.'/../../src/controllers/SessionController.php';
+    require_once __DIR__.'/../../src/repository/SessionRepository.php';
+    session_start();
+    $sessionController = new SessionController();
+    $sessionRepository = new SessionRepository();
+    if (isset($_SESSION['sessionId']) || $sessionRepository->getSession($_SERVER['REMOTE_ADDR'])) {
+        if (!$sessionController->didSessionExpired($_SESSION['sessionId'])) {
+            if ($_SESSION['userRole'] === 'patient')
+                header("Location: {$sessionController->getUrl()}/offers");
+            else if ($_SESSION['userRole'] === 'doctor')
+                header("Location: {$sessionController->getUrl()}/appointments");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/login.css">

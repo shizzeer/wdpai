@@ -1,5 +1,10 @@
-<!DOCTYPE html>
+<?php
+    require_once __DIR__.'/../../src/controllers/SecurityController.php';
+    $securityController = new SecurityController();
+    $securityController->authorizationHandler('doctor');
+?>
 
+<!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
@@ -19,32 +24,7 @@
         </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
-            <ul>
-                <li>
-                    <i class="fa-solid fa-book"></i>
-                    <a href="#" class="button">appointments</a>
-                </li>
-                <li>
-                    <i class="fa-light fa-percent"></i>
-                    <a href="patients" class="button">patients</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-message"></i>
-                    <a href="contact" class="button">contact</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-circle-info"></i>
-                    <a href="#" class="button">prescriptions</a>
-                </li>
-                <li id="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="settings" class="button">settings</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <a href="login" class="button">logout</a>
-                </li>
-            </ul>
+            <?php include "menu.php"; ?>
         </nav>
         <main>
             <header>
