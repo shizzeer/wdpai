@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/registration.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/registration.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>REGISTER</title>
 </head>
 <body>
@@ -24,14 +25,15 @@
                 <span class="form_header_txt">Create your account</span>
             </div>
             <form class="registration">
-                <input type="text" name="full_name" placeholder="full name">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="password">
-                <input class="date_of_birth" type="text" name="date_of_birth" placeholder="date of birth (DD/MM/YYYY)">
-                <input type="text" name="address" placeholder="address">
-                <input type="text" name="identity_number" placeholder="identity number">
-                <input type="number" name="phone_number" placeholder="phone number"><br>
-                <button class="sign_up_button">
+                <input type="text" name="name" placeholder="name" required>
+                <input type="text" name="surname" placeholder="surname" required>
+                <input type="email" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="password" required>
+                <input class="date_of_birth" type="text" name="date_of_birth" placeholder="date of birth (DD/MM/YYYY)" required>
+<!--                <input type="text" name="address" placeholder="address">-->
+                <input type="text" name="identity_number" placeholder="identity number" required>
+                <input type="tel" name="phone_number" placeholder="phone number" required><br>
+                <button class="sign_up_button" style="cursor:pointer">
                     <span id="sign_up_text">Sign Up</span>
                 </button>
             </form>
