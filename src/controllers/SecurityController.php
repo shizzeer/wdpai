@@ -25,7 +25,7 @@ class SecurityController extends AppController
         $userRepository = new UserRepository();
         $user = $userRepository->getUser($email);
 
-        if ($user === null || $user->getEmail() !== $email || $user->getPassword() !== $password)
+        if ($user === null || $user->getEmail() !== $email || !password_verify($password, $user->getPassword()))
         {
             return $this->render('login', ['messages' => ['Wrong username or password']]);
         }

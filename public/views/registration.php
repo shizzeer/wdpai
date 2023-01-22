@@ -1,3 +1,19 @@
+<?php
+    require_once __DIR__.'/../../src/controllers/SessionController.php';
+    require_once __DIR__.'/../../src/repository/SessionRepository.php';
+    session_start();
+    $sessionController = new SessionController();
+    $sessionRepository = new SessionRepository();
+    if (isset($_SESSION['sessionId']) || $sessionRepository->getSession($_SERVER['REMOTE_ADDR'])) {
+        if (!$sessionController->didSessionExpired($_SESSION['sessionId'])) {
+            if ($_SESSION['userRole'] === 'patient')
+                header("Location: {$sessionController->getUrl()}/offers");
+            else if ($_SESSION['userRole'] === 'doctor')
+                header("Location: {$sessionController->getUrl()}/appointments");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +40,16 @@
             <div class="form_header">
                 <span class="form_header_txt">Create your account</span>
             </div>
-            <form class="registration">
+            <form class="registration" method="POST" onsubmit="return isFormValid()">
+                <div class="error">
+                    <?php
+                        if(isset($messages)) {
+                            foreach ($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                    ?>
+                </div>
                 <input type="text" name="name" placeholder="name" required>
                 <input type="text" name="surname" placeholder="surname" required>
                 <input type="email" name="email" placeholder="email" required>

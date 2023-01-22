@@ -20,7 +20,8 @@ function checkPassword(password) {
 }
 
 function checkDateOfBirth(dateOfBirth) {
-    return /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/.test(dateOfBirth);
+    // return /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/.test(dateOfBirth);
+    return /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/.test(dateOfBirth);
 }
 
 function checkIdentityNumber(identityNumber) {
@@ -75,6 +76,16 @@ function validatePhoneNumber() {
     setTimeout(function () {
         markValidation(phoneNumberInput, checkPhoneNumber(phoneNumberInput.value));
     }, 1000);
+}
+
+function isFormValid() {
+    if (checkEmail(emailInput.value) && checkNameOrSurname(nameInput.value)
+        && checkNameOrSurname(surnameInput.value) && checkPassword(passwordInput.value)
+        && checkDateOfBirth(dateOfBirthInput.value) && checkIdentityNumber(identityNumberInput.value)
+        && checkPhoneNumber(phoneNumberInput.value)) {
+        return true;
+    }
+    return false;
 }
 
 emailInput.addEventListener('keyup', validateEmail);

@@ -44,4 +44,36 @@ class UserRepository extends Repository
 
         return $session;
     }
+
+    public function canRegisterUser($email): bool
+    {
+        $stmt = $this->database->connect()->prepare('SELECT email FROM dbname.public."Users"
+                                                           WHERE "email" = :email');
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return !$result;
+    }
+
+    public function registerUser($user)
+    {
+        $stmt = $this->database->connect()->prepare('INSERT INTO dbname.public."User_Details" ("name", "surname", "dateOfBirth", "phoneNumber", "identityNumber")
+                                                    VALUES (?, ?, ?, ?, ?);');
+        $stmt->execute([
+            $user->getName(),
+            $user->getSurname(),
+            $user->getDateOfBirth(),
+            $user->getPhoneNumber(),
+            $user->getIdentityNumber()
+        ]);
+        $stmt = $this->database->connect()->prepare('INSERT INTO dbname.public."Users" ("email", "password", "role")
+                                                    VALUES (?, ?, ?);');
+        $stmt->execute([
+            $user->getEmail(),
+            $user->getPassword(),
+            $user->getRole()
+        ]);
+    }
 }

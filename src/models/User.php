@@ -2,6 +2,7 @@
 
 class User
 {
+    private $id;
     private $name;
     private $surname;
     private $email;
@@ -9,7 +10,7 @@ class User
     private $dateOfBirth;
     private $phoneNumber;
     private $identityNumber;
-
+    private $role;
 
     public function __construct(int $id, string $name, string $surname,
                                 string $email, string $password,
