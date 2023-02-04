@@ -37,21 +37,24 @@
                     <a href="#" class="general_button">Book a visit</a>
                 </div>
                 <div class="reservations_container">
-                    <form>
+                    <form method="POST" action="/book">
+                        <div style="color: red;padding-bottom: 0.5rem;"><?php echo $generalMessage; ?></div>
                         <div class="form-group">
                             <label for="doctor">Preferred Doctor:</label><br>
                             <select id="doctor" name="doctor" class="form-control" required>
-                                <option value="Dr. Smith">Dr. Smith</option>
-                                <option value="Dr. Johnson">Dr. Johnson</option>
-                                <option value="Dr. Williams">Dr. Williams</option>
+                                <?php foreach ($doctors as $doctor): ?>
+                                    <option value="<?= $doctor->getSurname() ?>">Dr. <?= $doctor->getSurname() ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="date">Preferred Date:</label><br>
+                            <span style="color: red;"><?php echo $dateMessage; ?></span>
                             <input type="date" id="date" name="date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="time">Preferred Time:</label><br>
+                            <span style="color: red;"><?php echo $timeMessage; ?></span>
                             <input type="time" id="time" name="time" class="form-control" required>
                         </div>
                         <div class="form-group">

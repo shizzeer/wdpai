@@ -23,7 +23,7 @@ class SecurityController extends AppController
         $password = $_POST['password'];
 
         $userRepository = new UserRepository();
-        $user = $userRepository->getUser($email);
+        $user = $userRepository->getUserByMail($email);
 
         if ($user === null || $user->getEmail() !== $email || !password_verify($password, $user->getPassword()))
         {

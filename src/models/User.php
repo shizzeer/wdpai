@@ -33,6 +33,10 @@ class User
         return $this->id;
     }
 
+    public function getNameAndSurname(): string
+    {
+        return $this->name.' '.$this->surname;
+    }
     public function getName(): string
     {
         return $this->name;

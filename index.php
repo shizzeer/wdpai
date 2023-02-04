@@ -11,18 +11,23 @@ Routing::get('opinions', 'DefaultController');
 Routing::get('contact', 'DefaultController');
 Routing::get('new_message', 'DefaultController');
 Routing::get('discounts', 'DefaultController');
-Routing::get('book', 'DefaultController');
-Routing::get('reservations', 'DefaultController');
+//Routing::get('book', 'DefaultController');
+//Routing::get('reservations', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('offers', 'DefaultController');
 
-Routing::get('appointments', 'DefaultController');
+//Routing::get('appointments', 'DefaultController');
 Routing::get('patients', 'DefaultController');
 Routing::get('prescriptions', 'DefaultController');
 Routing::get('write_prescription', 'DefaultController');
 
 Routing::get('logout', 'SecurityController');
 Routing::get('not_authorized', 'DefaultController');
+
+Routing::get('appointments', 'AppointmentsController');
+Routing::get('reservations', 'AppointmentsController');
+Routing::get('book', 'AppointmentsController');
+//Routing::get('book', 'BookerController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
