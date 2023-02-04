@@ -5,6 +5,8 @@ Each controller is assigned to specific URL. */
 
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
+require_once 'src/controllers/RegisterController.php';
+require_once 'src/controllers/AppointmentsController.php';
 
 class Routing {
     public static $routes;
