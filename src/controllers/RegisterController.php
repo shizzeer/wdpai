@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/PatientRepository.php';
 require_once __DIR__.'/../models/User.php';
 
 class RegisterController extends AppController
@@ -10,6 +11,7 @@ class RegisterController extends AppController
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->patientRepository = new PatientRepository();
     }
 
     public function register()
@@ -30,12 +32,15 @@ class RegisterController extends AppController
             $this->render('registration', ['messages' => ['User with this email already exists']]);
             return;
         }
-        // ID is incremented automatically in database so there is no need to set it
-        $user = new User(0, $name, $surname, $email,
+        // ID is incremented automatically in database
+        $userId = UserRepository::getNextAvailableUserId();
+        $user = new User($userId, $name, $surname, $email,
             $password, $dateOfBirth, $phoneNumber,
             $identityNumber, 'patient');
 
         $this->userRepository->registerUser($user);
+        // Registration system is only for patients
+        $this->patientRepository->addPatient($user);
         $this->render('registration', ['messages' => ['Account created successfully!']]);
     }
 }

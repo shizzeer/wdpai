@@ -42,19 +42,27 @@
                 <div class="reservations_container">
                     <?php foreach ($appointments as $appointment): ?>
                     <div class="reservation">
-                        <table>
-                            <tr>
-                                <td><?= $appointment->getDoctorName() ?></td>
-                                <td><?= $appointment->getDate() ?></td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td><?= $appointment->getPrice() ?></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><?= $appointment->getComments() ?></td>
-                            </tr>
-                        </table>
+                        <div class="card">
+                            <span class="card_close">
+                                &times;
+                            </span>
+                            <div class="card_entry">
+                                <b>Doctor: </b>
+                                <?= $appointment->getDoctorName() ?>
+                            </div>
+                            <div class="card_entry">
+                                <b>Date: </b>
+                                <?= $appointment->getDate() ?>
+                            </div>
+                            <div class="card_entry">
+                                <b>Time: </b>
+                                <?= $appointment->getTime() ?>
+                            </div>
+                            <div class="card_entry">
+                                <b>Comments</b><br>
+                                <?= $appointment->getComments() ?>
+                            </div>
+                        </div>
                     </div>
                     <?php endforeach; ?>
 <!--                    <div class="reservation">-->

@@ -37,7 +37,7 @@ class UserRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Users" 
                                                            INNER JOIN dbname.public."User_Details"
-                                                           ON dbname.public."Users"."idUser" = dbname.public."User_Details"."idUserDetails"
+                                                           ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
                                                            WHERE email = :email');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -59,6 +59,15 @@ class UserRepository extends Repository
             $user['identityNumber'],
             $user['role']
         );
+    }
+
+    public static function getNextAvailableUserId()
+    {
+        $pdo = new PDO("pgsql:host=db;port=5432;dbname=dbname", "dbuser", "dbpwd");
+        $stmt = $pdo->prepare('SELECT MAX("idUser") AS max_id FROM dbname.public."Users"');
+        $stmt->execute();
+        $row = $stmt->fetch();
+        return $row["max_id"] + 1;
     }
 
     public function getUserSession(int $userId)

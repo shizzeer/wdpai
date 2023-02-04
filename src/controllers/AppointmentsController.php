@@ -5,6 +5,8 @@ require_once __DIR__.'/../repository/UserRepository.php';
 require_once __DIR__.'/../repository/DoctorRepository.php';
 require_once __DIR__.'/../models/AppointmentValidator.php';
 
+require_once __DIR__.'/../models/Appointment.php';
+
 class AppointmentsController extends DefaultController
 {
     private AppointmentsRepository $appointmentsRepository;
@@ -17,13 +19,19 @@ class AppointmentsController extends DefaultController
 
     function reservations()
     {
-        $appointments = $this->appointmentsRepository->getPatientAppointments($_SESSION['userId']);
+        $appointments = array();
+        if (isset($_SESSION['userId'])) {
+            $appointments = $this->appointmentsRepository->getPatientAppointments($_SESSION['userId']);
+        }
         $this->render('reservations', ['appointments' => $appointments]);
     }
 
     function appointments()
     {
-        $appointments = $this->appointmentsRepository->getDoctorAppointments($_SESSION['userId']);
+        $appointments = array();
+        if (isset($_SESSION['userId'])) {
+            $appointments = $this->appointmentsRepository->getDoctorAppointments($_SESSION['userId']);
+        }
         $this->render('appointments', ['appointments' => $appointments]);
     }
 
@@ -67,9 +75,13 @@ class AppointmentsController extends DefaultController
             return;
         }
         // 5. Wszystko ok
-        // TODO: Zmapowanie nazwiska lekarza na jego ID i stworzenie obiektu Appointment
         $messages['generalMessage'] = 'Your appointment has been booked';
+        if ($_POST['comments'] === null) {
+            $_POST['comments'] = '';
+        }
+        $appointment = Appointment::createAppointmentForBooking($_SESSION['userId'], $_POST['date'], $_POST['time'],
+                                                                $_POST['comments'], 99.99, $_POST['doctor']);
+        $this->appointmentsRepository->addAppointment($appointment);
         $this->render('booking', $messages);
-//        $this->appointmentsRepository->addAppointment();
     }
 }

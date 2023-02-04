@@ -188,6 +188,32 @@ header {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
+.card {
+    position: relative;
+    margin: auto;
+    width: 60%;
+    box-shadow: 10px 10px 6px #00000029;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    font-family: CircularStd, sans-serif;
+    border-radius: 10px;
+    color: white;
+}
+
+.card_entry {
+    padding: 2%;
+}
+
+.card_close {
+    position: absolute;
+    top: 0.2em;
+    right: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
 .column_content {
     display: flex;
     flex-direction: column;

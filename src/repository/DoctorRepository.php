@@ -52,6 +52,16 @@ class DoctorRepository extends Repository
 
     function getDoctorIdBySurname(string $surname): int
     {
-        // TODO
+        $stmt = $this->database->connect()->prepare('SELECT "idDoctor" FROM dbname.public."Doctors"
+                                                            INNER JOIN dbname.public."Users"
+                                                            ON dbname.public."Doctors"."idUser" = dbname.public."Users"."idUser"
+                                                            INNER JOIN dbname.public."User_Details"
+                                                            ON dbname.public."User_Details"."idUserDetails" = dbname.public."Users"."idUserDetails"
+                                                            WHERE "surname" = :surname');
+        $stmt->bindParam(':surname', $surname, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row['idDoctor'];
     }
 }
