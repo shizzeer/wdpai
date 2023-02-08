@@ -111,8 +111,11 @@ class AppointmentsRepository extends Repository
         ]);
     }
 
-    function removeAppointment(int $appointmentId)
+    function removeAppointment(int $appointmentId): bool
     {
-        /* TODO: Usun wizyte o podanym ID */
+        $stmt = $this->database->connect()->prepare('DELETE FROM dbname.public."Appointments" 
+                                                        WHERE "idAppointment" = :appointmentId');
+        $stmt->bindParam(':appointmentId', $appointmentId);
+        return $stmt->execute();
     }
 }

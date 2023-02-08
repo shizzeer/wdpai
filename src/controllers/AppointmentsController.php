@@ -84,4 +84,23 @@ class AppointmentsController extends DefaultController
         $this->appointmentsRepository->addAppointment($appointment);
         $this->render('booking', $messages);
     }
+
+    function remove_appointment()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $appointmentId = $data['id'];
+        if ($appointmentId) {
+            if ($this->appointmentsRepository->removeAppointment($appointmentId)) {
+                http_response_code(200);
+            } else {
+                header('Content-Type: application/json');
+                echo json_encode(['message' => 'Error while removing appointment']);
+                http_response_code(500);
+            }
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['message' => 'Appointment ID not set']);
+            http_response_code(500);
+        }
+    }
 }

@@ -13,6 +13,7 @@
     <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
     <!-- w ten sposob mamy dostep do elementow html -->
     <script src="/public/nav.js" defer></script>
+    <script src="/public/js/remove-appointment.js" defer></script>
     <title>RESERVATIONS</title>
 </head>
 
@@ -42,8 +43,8 @@
                 <div class="reservations_container">
                     <?php foreach ($appointments as $appointment): ?>
                     <div class="reservation">
-                        <div class="card">
-                            <span class="card_close">
+                        <div class="card" id="appointment_card" appointment_id="<?= $appointment->getId() ?>">
+                            <span id="close_icon" class="card_close">
                                 &times;
                             </span>
                             <div class="card_entry">
@@ -65,96 +66,6 @@
                         </div>
                     </div>
                     <?php endforeach; ?>
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="reservation">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Doctor's Name</td>-->
-<!--                                <td>Date and time</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Address</td>-->
-<!--                                <td>Price</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td colspan="2">Additional comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
                 </div>
             </section>
         </main>
