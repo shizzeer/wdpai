@@ -14,6 +14,7 @@
     <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
     <!-- w ten sposob mamy dostep do elementow html -->
     <script src="/public/nav.js" defer></script>
+    <script src="/public/js/settings-validation.js" defer></script>
     <title>SETTINGS</title>
 </head>
 
@@ -45,41 +46,41 @@
                             <!-- <div class="value">Joe Doe</div> -->
                             <div class="value"><input type="text" name="name" value="<?php echo $settings->getAccountSettings()['name'] ?>"
                                                       class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_name" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Email</div>
                             <div class="value"><input type="text" name="email" value="<?php echo $settings->getAccountSettings()['email'] ?>"
                                                       class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_email" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Password</div>
                             <div class="value"><input type="password" name="password" value="password" class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_password" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Date of birth</div>
                             <div class="value"><input type="text" name="date" value="<?php echo $settings->getAccountSettings()['dateOfBirth'] ?>"
                                                       class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_birth_date" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Phone number</div>
                             <div class="value"><input type="phone" name="phone_number" value="<?php echo $settings->getAccountSettings()['phoneNumber'] ?>"
                                                       class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_phone_number" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Identity number</div>
                             <div class="value"><input type="text" name="identity_number" value="<?php echo $settings->getAccountSettings()['identityNumber'] ?>"
                                                       class="setting_in"></div>
-                            <div class="save_container"><button type="submit" class="save">Save</button></div>
+                            <div class="save_container"><button type="submit" name="save_identity_number" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
                     </form>

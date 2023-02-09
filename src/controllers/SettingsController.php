@@ -18,8 +18,10 @@ class SettingsController extends DefaultController
 
     function settings()
     {
-        $user = $this->userRepository->getUserById($_SESSION['userId']);
-        $this->settings->setAccountSettings($user);
+        if (isset($_SESSION['userId'])) {
+            $user = $this->userRepository->getUserById($_SESSION['userId']);
+            $this->settings->setAccountSettings($user);
+        }
         $this->render('settings', ['settings' => $this->settings]);
     }
 }

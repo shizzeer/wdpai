@@ -1,5 +1,9 @@
 const closeCardIcon = document.getElementById('close_icon');
 
+function func() {
+    alert('Changed!');
+}
+
 closeCardIcon.addEventListener('click', () => {
     const appointmentCard = document.getElementById("appointment_card");
     const appointmentId = appointmentCard.getAttribute('appointment_id');
