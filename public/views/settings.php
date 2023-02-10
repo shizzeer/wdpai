@@ -56,18 +56,22 @@
                             <div class="save_container"><button type="submit" name="save_email" class="save" disabled>Save</button></div>
                         </div>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Password</div>
-                            <div class="value"><input type="password" name="password" value="password" class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_password" class="save" disabled>Save</button></div>
-                        </div>
+                        <form action="POST" method="settings">
+                            <div class="setting">
+                                <div class="key">Password</div>
+                                <div class="value"><input type="password" name="password" value="password" class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_password" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Date of birth</div>
-                            <div class="value"><input type="text" name="date" value="<?php echo $settings->getAccountSettings()['dateOfBirth'] ?>"
-                                                      class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_birth_date" class="save" disabled>Save</button></div>
-                        </div>
+                        <form action="POST" method="settings">
+                            <div class="setting">
+                                <div class="key">Date of birth</div>
+                                <div class="value"><input type="text" name="date" value="<?php echo $settings->getAccountSettings()['dateOfBirth'] ?>"
+                                                          class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_birth_date" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
                         <div class="setting">
                             <div class="key">Phone number</div>

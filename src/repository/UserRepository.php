@@ -113,4 +113,66 @@ class UserRepository extends Repository
             $user->getRole()
         ]);
     }
+
+    public function updateName(int $userId, string $newName)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."User_Details"
+                                                           SET "name" = :newName
+                                                           WHERE "idUserDetails" = :userId');
+        $stmt->bindParam(':newName', $newName);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
+
+    public function updateSurname(int $userId, string $newSurname)
+    {
+        // idUserDetails is mapped to the idUser - this is a logic in whole app
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."User_Details"
+                                                           SET "surname" = :newName
+                                                           WHERE "idUserDetails" = :userId');
+        $stmt->bindParam(':newName', $newSurname);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
+
+    public function updateEmail(int $userId, string $newEmail)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."Users"
+                                                           SET "email" = :newEmail
+                                                           WHERE "idUser" = :userId');
+        $stmt->bindParam(':newEmail', $newEmail);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
+
+    public function updatePassword(int $userId, string $newPassword)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."Users"
+                                                           SET "password" = :newPassword
+                                                           WHERE "idUser" = :userId');
+        $stmt->bindParam(':newPassword', $newPassword);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
+
+    public function updateDateOfBirth(int $userId, string $newDateOfBirth)
+    {
+        // idUserDetails is mapped to the userId
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."User_Details"
+                                                           SET "dateOfBirth" = :newDateOfBirth
+                                                           WHERE "idUserDetails" = :userId');
+        $stmt->bindParam(':newDateOfBirth', $newDateOfBirth);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
+
+    public function updatePhoneNumber(int $userId, string $phoneNumber)
+    {
+        $stmt = $this->database->connect()->prepare('UPDATE dbname.public."User_Details"
+                                                           SET "phoneNumber" = :phoneNumber
+                                                           WHERE "idUserDetails" = :userId');
+        $stmt->bindParam(':phoneNumber', $phoneNumber);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+    }
 }
