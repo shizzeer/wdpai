@@ -19,7 +19,7 @@ Routing::get('offers', 'DefaultController');
 //Routing::get('appointments', 'DefaultController');
 Routing::get('patients', 'DefaultController');
 Routing::get('prescriptions', 'DefaultController');
-Routing::get('write_prescription', 'DefaultController');
+//Routing::get('write_prescription', 'DefaultController');
 
 Routing::get('logout', 'SecurityController');
 Routing::get('not_authorized', 'DefaultController');
@@ -32,6 +32,7 @@ Routing::get('book', 'AppointmentsController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
 Routing::post('remove_appointment', 'AppointmentsController');
+Routing::post('write_prescription', 'PrescriptionController');
 
 if ($path == '') {
     Routing::run('index');

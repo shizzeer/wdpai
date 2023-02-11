@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Settings.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 require_once __DIR__.'/../repository/SettingsRepository.php';
 
-class SettingsController extends DefaultController
+class SettingsController extends AppController
 {
     private UserRepository $userRepository;
     private Settings $settings;

@@ -41,25 +41,36 @@
                     <a href="#" class="general_button">Write a prescription</a>
                 </div>
                 <div class="internal_container">
-                    <form>
+                    <form method="POST" action="write_prescription">
                         <div class="form-group">
-                            <label for="patient_id_number">Identity number:</label><br>
-                            <input type="text" id="patient_id_number" name="patient_id_number" class="form-control" required>
+                            <div class="error">
+                                <?php
+                                if(isset($messages)) {
+                                    foreach ($messages as $message) {
+                                        echo $message;
+                                    }
+                                }
+                                ?>
+                            </div><br>
                         </div>
                         <div class="form-group">
-                            <label for="medications">Medications:</label><br>
-                            <textarea name="comments" id="medications" name="medications" class="form-control area"></textarea>
+                            <label for="patient_id_number">Identity number:</label><br>
+                            <input placeholder="Patient's identity number" type="text" id="patient_id_number" name="patient_id_number" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="medicals">Medicals:</label><br>
+                            <textarea placeholder="One medical in line" id="medicals" name="medicals" class="form-control area"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="prescription_date">Prescription date:</label><br>
-                            <input type="date" id="prescription_date" name="prescription_date" class="form-control">
+                            <input type="date" id="prescription_date" name="prescription_date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="treatment_date">Treatment date:</label><br>
-                            <input type="date" id="treatment_date" name="treatment_date" class="form-control">
+                            <input type="date" id="treatment_date" name="treatment_date" class="form-control" required>
                         </div>
                         <br>
-                        <input type="submit" value="Save" class="general_button btn">
+                        <button type="submit" class="general_button btn">Save</button>
                     </form>
                 </div>
             </section>
