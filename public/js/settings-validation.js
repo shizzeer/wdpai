@@ -1,23 +1,26 @@
+const name_setting_form = document.getElementById('name_setting_form');
+const name_input = name_setting_form.querySelector('input[name="name"]');
+const name_button = name_setting_form.querySelector('button[name="save_name"]');
 
-const settings_form = document.querySelector('form');
+const email_setting_form = document.getElementById('email_setting_form');
+const email_input = email_setting_form.querySelector('input[name="email"]');
+const email_button = email_setting_form.querySelector('button[name="save_email"]');
 
-const name_input = settings_form.querySelector('input[name="name"]');
-const name_button = settings_form.querySelector('button[name="save_name"]');
+const password_setting_form = document.getElementById('password_setting_form');
+const password_input = password_setting_form.querySelector('input[name="password"]');
+const password_button = password_setting_form.querySelector('button[name="save_password"]');
 
-const email_input = settings_form.querySelector('input[name="email"]');
-const email_button = settings_form.querySelector('button[name="save_email"]');
+const date_setting_form = document.getElementById('date_setting_form');
+const date_input = date_setting_form.querySelector('input[name="date"]');
+const date_button = date_setting_form.querySelector('button[name="save_birth_date"]');
 
-const password_input = settings_form.querySelector('input[name="password"]');
-const password_button = settings_form.querySelector('button[name="save_password"]');
+const phone_setting_form = document.getElementById('phone_setting_form');
+const phone_input = phone_setting_form.querySelector('input[name="phone_number"]');
+const phone_button = phone_setting_form.querySelector('button[name="save_phone_number"]');
 
-const date_input = settings_form.querySelector('input[name="date"]');
-const date_button = settings_form.querySelector('button[name="save_birth_date"]');
-
-const phone_input = settings_form.querySelector('input[name="phone_number"]');
-const phone_button = settings_form.querySelector('button[name="save_phone_number"]');
-
-const identity_number_input = settings_form.querySelector('input[name="identity_number"]');
-const identity_number_button = settings_form.querySelector('button[name="save_identity_number"]');
+const identity_number_setting_form = document.getElementById('identity_number_setting_form');
+const identity_number_input = identity_number_setting_form.querySelector('input[name="identity_number"]');
+const identity_number_button = identity_number_setting_form.querySelector('button[name="save_identity_number"]');
 
 function checkNameAndSurname(nameAndSurname) {
     return /^[a-zA-Z]+ [a-zA-Z]+$/.test(nameAndSurname);
@@ -37,6 +40,10 @@ function checkDateOfBirth(dateOfBirth) {
 
 function checkPhoneNumber(phoneNumber) {
     return /^\d{9}$/.test(phoneNumber);
+}
+
+function checkIdentityNumber(identityNumber) {
+    return /^\d{11}$/.test(identityNumber);
 }
 
 name_input.addEventListener("input", () => {
@@ -100,7 +107,14 @@ phone_input.addEventListener("input", () => {
 })
 
 identity_number_input.addEventListener("input", () => {
-    identity_number_button.style.color = '#1E78D6';
-    identity_number_button.disabled = false;
+    if (checkIdentityNumber(identity_number_input.value)) {
+        identity_number_input.style.color = '#504D4D';
+        identity_number_button.style.color = '#1E78D6';
+        identity_number_button.disabled = false;
+    } else {
+        identity_number_button.style.color = 'gray';
+        identity_number_input.style.color = "red";
+        identity_number_button.disabled = true;
+    }
 })
 

@@ -15,33 +15,32 @@ class SettingsRepository extends Repository
 
     function updateNameAndSurname(int $userId, string $name, string $surname)
     {
-        // Initial validation is done on the client-side
-        $this->userRepository->updateName($userId, $name);
-        $this->userRepository->updateSurname($userId, $surname);
+        $this->userRepository->updateUserDetailsData($userId, "name", $name);
+        $this->userRepository->updateUserDetailsData($userId, "surname", $surname);
     }
 
     function updateEmail(int $userId, string $newEmail)
     {
-        $this->userRepository->updateEmail($userId, $newEmail);
+        $this->userRepository->updateUserData($userId, "email", $newEmail);
     }
 
     function updatePassword(int $userId, string $newPassword)
     {
-        $this->userRepository->updatePassword($userId, $newPassword);
+        $this->userRepository->updateUserData($userId, "password", $newPassword);
     }
 
     function updateDateOfBirth(int $userId, string $newDateOfBirth)
     {
-        $this->userRepository->updateDateOfBirth($userId, $newDateOfBirth);
+        $this->userRepository->updateUserDetailsData($userId, "dateOfBirth", $newDateOfBirth);
     }
 
     function updatePhoneNumber(int $userId, string $phoneNumber)
     {
-        $this->userRepository->updatePhoneNumber($userId, $phoneNumber);
+        $this->userRepository->updateUserDetailsData($userId, "phoneNumber", $phoneNumber);
     }
 
     function updateIdentityNumber(int $userId, string $identityNumber)
     {
-        $this->userRepository->updateIdentityNumber($userId, $identityNumber);
+        $this->userRepository->updateUserDetailsData($userId, "identityNumber", $identityNumber);
     }
 }

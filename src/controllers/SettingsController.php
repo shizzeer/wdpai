@@ -43,7 +43,6 @@ class SettingsController extends DefaultController
                 $this->settings->setAccountSettings($user);
                 $this->settingsRepository->updateEmail($user->getId(), $_POST['email']);
             }
-            /* TODO: Setting password probably does not work. (sprawdzic burpem) */
             if (isset($_POST['password'])) {
                 $hashed_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
                 $user->setPassword($hashed_password);
@@ -59,6 +58,11 @@ class SettingsController extends DefaultController
                 $user->setPhoneNumber($_POST['phone_number']);
                 $this->settings->setAccountSettings($user);
                 $this->settingsRepository->updatePhoneNumber($user->getId(), $_POST['phone_number']);
+            }
+            if (isset($_POST['identity_number'])) {
+                $user->setIdentityNumber($_POST['identity_number']);
+                $this->settings->setAccountSettings($user);
+                $this->settingsRepository->updateIdentityNumber($user->getId(), $_POST['identity_number']);
             }
         }
         $this->render('settings', ['settings' => $this->settings]);

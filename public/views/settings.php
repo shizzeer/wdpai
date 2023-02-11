@@ -36,27 +36,31 @@
             </header>
             <section class="column_content">
                 <div class="settings_container">
-                    <form method="POST" action="settings">
+<!--                    <form method="POST" action="settings">-->
                         <div class="settings_header">
                             Account settings
                         </div>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Name and surname</div>
-                            <!-- <div class="value">Joe Doe</div> -->
-                            <div class="value"><input type="text" name="name" value="<?php echo $settings->getAccountSettings()['name'] ?>"
-                                                      class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_name" class="save" disabled>Save</button></div>
-                        </div>
+                        <form id="name_setting_form" method="POST" action="settings">
+                            <div class="setting">
+                                <div class="key">Name and surname</div>
+                                <!-- <div class="value">Joe Doe</div> -->
+                                <div class="value"><input type="text" name="name" value="<?php echo $settings->getAccountSettings()['name'] ?>"
+                                                          class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_name" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Email</div>
-                            <div class="value"><input type="text" name="email" value="<?php echo $settings->getAccountSettings()['email'] ?>"
-                                                      class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_email" class="save" disabled>Save</button></div>
-                        </div>
+                        <form id="email_setting_form" method="POST" action="settings">
+                            <div class="setting">
+                                <div class="key">Email</div>
+                                <div class="value"><input type="text" name="email" value="<?php echo $settings->getAccountSettings()['email'] ?>"
+                                                          class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_email" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
-                        <form action="POST" method="settings">
+                        <form id="password_setting_form" method="POST" action="settings">
                             <div class="setting">
                                 <div class="key">Password</div>
                                 <div class="value"><input type="password" name="password" value="password" class="setting_in"></div>
@@ -64,7 +68,7 @@
                             </div>
                         </form>
                         <div class="divider"></div>
-                        <form action="POST" method="settings">
+                        <form id="date_setting_form" method="POST" action="settings">
                             <div class="setting">
                                 <div class="key">Date of birth</div>
                                 <div class="value"><input type="text" name="date" value="<?php echo $settings->getAccountSettings()['dateOfBirth'] ?>"
@@ -73,21 +77,25 @@
                             </div>
                         </form>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Phone number</div>
-                            <div class="value"><input type="phone" name="phone_number" value="<?php echo $settings->getAccountSettings()['phoneNumber'] ?>"
-                                                      class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_phone_number" class="save" disabled>Save</button></div>
-                        </div>
+                        <form id="phone_setting_form" method="POST" action="settings">
+                            <div class="setting">
+                                <div class="key">Phone number</div>
+                                <div class="value"><input type="phone" name="phone_number" value="<?php echo $settings->getAccountSettings()['phoneNumber'] ?>"
+                                                          class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_phone_number" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
-                        <div class="setting">
-                            <div class="key">Identity number</div>
-                            <div class="value"><input type="text" name="identity_number" value="<?php echo $settings->getAccountSettings()['identityNumber'] ?>"
-                                                      class="setting_in"></div>
-                            <div class="save_container"><button type="submit" name="save_identity_number" class="save" disabled>Save</button></div>
-                        </div>
+                        <form id="identity_number_setting_form" method="POST" action="settings">
+                            <div class="setting">
+                                <div class="key">Identity number</div>
+                                <div class="value"><input type="text" name="identity_number" value="<?php echo $settings->getAccountSettings()['identityNumber'] ?>"
+                                                          class="setting_in"></div>
+                                <div class="save_container"><button type="submit" name="save_identity_number" class="save" disabled>Save</button></div>
+                            </div>
+                        </form>
                         <div class="divider"></div>
-                    </form>
+<!--                    </form>-->
                 </div>
             </section>
         </main>
