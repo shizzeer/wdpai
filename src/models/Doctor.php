@@ -4,8 +4,8 @@ require_once 'User.php';
 
 class Doctor extends User
 {
-    private $doctorId;
-    private $specialization;
+    private int $doctorId;
+    private string $specialization;
 
     public function __construct(int $id, string $name, string $surname,
                                 string $email, string $password,

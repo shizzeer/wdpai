@@ -18,6 +18,7 @@
         <h1>Not Authorized</h1>
         <p>You do not have permission to access this page.</p>
         <p>Please contact an administrator if you believe this is an error.</p>
+        <p>Visit <a href="login" style="text-decoration: none; color='#1E78D6'">login</a> page</p>
         <?php http_response_code(401); ?>
     </body>
 </html>

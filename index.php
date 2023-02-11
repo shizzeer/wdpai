@@ -13,7 +13,7 @@ Routing::get('new_message', 'DefaultController');
 Routing::get('discounts', 'DefaultController');
 //Routing::get('book', 'DefaultController');
 //Routing::get('reservations', 'DefaultController');
-Routing::get('settings', 'DefaultController');
+Routing::get('settings', 'SettingsController');
 Routing::get('offers', 'DefaultController');
 
 //Routing::get('appointments', 'DefaultController');
@@ -31,6 +31,7 @@ Routing::get('book', 'AppointmentsController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'RegisterController');
+Routing::post('remove_appointment', 'AppointmentsController');
 
 if ($path == '') {
     Routing::run('index');

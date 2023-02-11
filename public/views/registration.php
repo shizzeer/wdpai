@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./public/css/registration.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="./public/js/register-form-validation.js" defer></script>
     <title>REGISTER</title>
 </head>
 <body>

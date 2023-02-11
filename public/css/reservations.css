@@ -3,18 +3,6 @@
     overflow-y: auto;
 }
 
-table {
-    border-collapse: collapse;
-    width: 70%;
-    margin: auto;
-}
-
-td {
-    border: 1px solid black;
-    text-align: left;
-    padding: 0.7em;
-}
-
 .reservation {
     width: 100%;
     margin: auto;
@@ -24,7 +12,7 @@ td {
 }
 
 @media (max-device-width: 650px) {
-    table {
+    .card {
         font-size: 2rem;
     }
 }

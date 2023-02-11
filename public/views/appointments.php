@@ -68,173 +68,30 @@
                 <div class="appointments">
                     <?php foreach ($appointments as $appointment): ?>
                         <div class="appointment">
-                            <table>
-                                <tr>
-                                    <td><?= $appointment->getPatientName() ?></td>
-                                    <td><?= $appointment->getPatientId() ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?= $appointment->getId() ?></td>
-                                    <td rowspan="3">Done<br>
-                                        Not done
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><?= $appointment->getDate().' '.$appointment->getTime() ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?= $appointment->getComments() ?></td>
-                                </tr>
-                            </table>
+                            <div class="card">
+                                <div class="card_entry">
+                                    <b>Patient name: </b>
+                                    <?= $appointment->getPatientName() ?>
+                                </div>
+                                <div class="card_entry">
+                                    <b>Patient ID: </b>
+                                    <?= $appointment->getPatientId() ?>
+                                </div>
+                                <div class="card_entry">
+                                    <b>Appointment ID: </b>
+                                    <?= $appointment->getId() ?>
+                                </div>
+                                <div class="card_entry">
+                                    <b>Date and time: </b>
+                                    <?= $appointment->getDate().' '.$appointment->getTime() ?>
+                                </div>
+                                <div class="card_entry">
+                                    <b>Comments</b><br>
+                                    <?= $appointment->getComments() ?>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
-                    <div class="appointment">
-                        <table>
-                            <tr>
-                                <td>Name and surname</td>
-                                <td>Date of birth</td>
-                            </tr>
-                            <tr>
-                                <td>Identity number</td>
-                                <td>Patient ID</td>
-                            </tr>
-                            <tr>
-                                <td>Date of visit | HH:MM:SS</td>
-                                <td rowspan="2">Done<br>
-                                    Not done
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Prescription / Comments</td>
-                            </tr>
-                        </table>
-                    </div>
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                    <div class="appointment">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>Name and surname</td>-->
-<!--                                <td>Date of birth</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Identity number</td>-->
-<!--                                <td>Patient ID</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Date of visit | HH:MM:SS</td>-->
-<!--                                <td rowspan="2">Done<br>-->
-<!--                                    Not done-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Prescription / Comments</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
                 </div>
             </section>
         </main>

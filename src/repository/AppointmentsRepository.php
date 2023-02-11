@@ -28,7 +28,8 @@ class AppointmentsRepository extends Repository
                                                     ON dbname.public."Patients"."idUser" = dbname.public."Users"."idUser"
                                                     INNER JOIN dbname.public."User_Details"
                                                     ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
-                                                    WHERE dbname.public."Users"."idUser" = :userId');
+                                                    WHERE dbname.public."Users"."idUser" = :userId
+                                                    ORDER BY dbname.public."Appointments"."date"');
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -60,7 +61,8 @@ class AppointmentsRepository extends Repository
                                                     ON dbname.public."Patients"."idUser" = dbname.public."Users"."idUser"
                                                     INNER JOIN dbname.public."User_Details"
                                                     ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
-                                                    WHERE dbname.public."Appointments"."idDoctor" = :doctorId');
+                                                    WHERE dbname.public."Appointments"."idDoctor" = :doctorId
+                                                    ORDER BY dbname.public."Appointments"."date"');
         $stmt->bindParam(':doctorId', $doctorId, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -111,8 +113,11 @@ class AppointmentsRepository extends Repository
         ]);
     }
 
-    function removeAppointment(int $appointmentId)
+    function removeAppointment(int $appointmentId): bool
     {
-        /* TODO: Usun wizyte o podanym ID */
+        $stmt = $this->database->connect()->prepare('DELETE FROM dbname.public."Appointments" 
+                                                        WHERE "idAppointment" = :appointmentId');
+        $stmt->bindParam(':appointmentId', $appointmentId);
+        return $stmt->execute();
     }
 }

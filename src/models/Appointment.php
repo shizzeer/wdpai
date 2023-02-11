@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../repository/PatientRepository.php';
+
 class Appointment
 {
     private Int $id;
@@ -25,6 +27,21 @@ class Appointment
         $this->price = $price;
         $this->doctorId = $doctorId;
         $this->patientId = $patientId;
+    }
+
+    public static function createAppointmentForBooking(int $userId, string $date, string $time, string $comments,
+                                                float $price, string $doctorSurname): Appointment
+    {
+        $patientRepository = new PatientRepository();
+        $doctorRepository = new DoctorRepository();
+
+        $patientId = $patientRepository->getPatientIdByUserId($userId);
+        $doctorId = $doctorRepository->getDoctorIdBySurname($doctorSurname);
+        $patientName = $patientRepository->getPatientNameByUserId($userId);
+
+        // Appointment ID is set to AUTO_INCREMENT in db so there is no need to pass it as the argument
+        return new Appointment(0, $doctorSurname, $patientName, $date, $time, $comments,
+                                $price, $doctorId, $patientId);
     }
 
     public function getId(): int
