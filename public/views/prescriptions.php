@@ -49,65 +49,75 @@
                     </form>
                 </div>
                 <div class="prescriptions">
-                    <div class="prescription">
-                        <table>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="row_container">
-                                        <div class="left_corner">
-                                            Patient
-                                        </div><br>
-                                        <div class="prescription_data">
-                                            Patient's personal data
+<!--                    <div>-->
+<!--                        --><?php
+//                            if (isset($messages)) {
+//                                foreach ($messages as $message) {
+//                                    print_r($message);
+//                                }
+//                            }
+//                        ?>
+<!--                    </div>-->
+                    <?php foreach ($prescriptions as $prescription): ?>
+                        <div class="prescription">
+                            <table>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="row_container">
+                                            <div class="left_corner">
+                                                Patient
+                                            </div><br>
+                                            <div class="prescription_data">
+                                                <b>Name: </b>
+                                                <?= $prescription->getPatientName() ?>
+                                                <?= $prescription->getPatientSurname() ?><br><br>
+                                                <b>Identity number: </b>
+                                                <?= $prescription->getPatientIdentityNumber() ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="row_container">
-                                        <div class="left_corner">
-                                            Medications
-                                        </div><br><br>
-                                        <div class="medications_list">
-                                            <div class="medicine">First medicine</div>
-                                            <div class="medicine">Second medicine</div>
-                                            <div class="medicine">Third medicine</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="row_container">
+                                            <div class="left_corner">
+                                                Medications
+                                            </div><br><br>
+                                            <div class="medications_list">
+                                                <div class="medicine"><?= str_replace("\n", "<br>", $prescription->getMedicals()) ?></div>
+<!--                                                <div class="medicine">Second medicine</div>-->
+<!--                                                <div class="medicine">Third medicine</div>-->
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="row_container">
-                                        <div class="left_corner">
-                                            Prescription date
-                                        </div><br><br>
-                                        <div class="prescription_data">
-                                            Date
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row_container">
+                                            <div class="left_corner">
+                                                Prescription date
+                                            </div><br><br>
+                                            <div class="prescription_data">
+                                                <?= $prescription->getPrescriptionDate() ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td rowspan="2">
-                                    <div class="doctor_data">
-                                        Doctor responsible for the prescription and date
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="flexible_row">
-                                    <div class="row_container">
-                                        <div class="left_corner">
-                                            Treatment start
-                                        </div><br><br>
-                                        <div class="prescription_data">
-                                            Date
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="flexible_row">
+                                        <div class="row_container">
+                                            <div class="left_corner">
+                                                Treatment start
+                                            </div><br><br>
+                                            <div class="prescription_data">
+                                                <?= $prescription->getTreatmentDate() ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
         </main>

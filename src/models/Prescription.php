@@ -12,10 +12,11 @@ class Prescription
     private string $prescriptionDate;
     private string $treatmentDate;
 
-    public function __construct(int $patientId, int $doctorId, string $patientName,
+    public function __construct(int $id, int $patientId, int $doctorId, string $patientName,
                                 string $patientSurname, string $patientIdentityNumber,
                                 string $medicals, string $prescriptionDate, string $treatmentDate)
     {
+        $this->id = $id;
         $this->patientId = $patientId;
         $this->doctorId = $doctorId;
         $this->patientName = $patientName;

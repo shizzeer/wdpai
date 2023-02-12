@@ -5,6 +5,8 @@ require_once __DIR__.'/../repository/UserRepository.php';
 require_once __DIR__.'/../repository/PatientRepository.php';
 require_once __DIR__.'/../repository/DoctorRepository.php';
 require_once __DIR__.'/../repository/PrescriptionRepository.php';
+require_once __DIR__.'/../repository/MedicalsRepository.php';
+require_once 'MedicalsController.php';
 
 class PrescriptionController extends AppController
 {
@@ -12,6 +14,8 @@ class PrescriptionController extends AppController
     private UserRepository $userRepository;
     private PatientRepository $patientRepository;
     private DoctorRepository $doctorRepository;
+    private MedicalsController $medicalsController;
+    private MedicalsRepository $medicalsRepository;
 
     public function __construct()
     {
@@ -20,6 +24,18 @@ class PrescriptionController extends AppController
         $this->userRepository = new UserRepository();
         $this->patientRepository = new PatientRepository();
         $this->doctorRepository = new DoctorRepository();
+        $this->medicalsController = new MedicalsController();
+        $this->medicalsRepository = new MedicalsRepository();
+    }
+
+    function prescriptions()
+    {
+        if (isset($_SESSION['userId'])) {
+            $doctorId = $this->doctorRepository->getDoctorIdByUserId($_SESSION['userId']);
+
+            $prescriptions = $this->prescriptionRepository->getPrescriptions($doctorId);
+            $this->render('prescriptions', ['prescriptions' => $prescriptions]);
+        }
     }
 
     function write_prescription()
@@ -36,20 +52,25 @@ class PrescriptionController extends AppController
                 if ($this->userRepository->identityNumberExists($patientIdentityNumber)) {
                     $patientId = $this->patientRepository->getPatientIdByIdentityNumber($patientIdentityNumber);
                     $doctorId = $this->doctorRepository->getDoctorIdByUserId($_SESSION['userId']);
-
                     $patient = $this->patientRepository->getPatientById($patientId);
-                    $prescription = new Prescription($patientId, $doctorId, $patient->getName(), $patient->getSurname(),
-                                                    $patient->getIdentityNumber(), $medicals, $prescriptionDate,
-                                                    $treatmentDate);
+
+                    $medicalsList = $this->medicalsController->getMedicalsList($medicals);
+                    $this->medicalsRepository->addMedicals($medicalsList);
+
+                    $nextAvailableId = $this->prescriptionRepository->getNextAvailableId();
+                    $prescription = new Prescription($nextAvailableId, $patientId, $doctorId, $patient->getName(),
+                                                    $patient->getSurname(), $patient->getIdentityNumber(),
+                                                    $medicals, $prescriptionDate, $treatmentDate);
                     $this->prescriptionRepository->addPrescription($prescription);
+                    $this->prescriptionRepository->linkPrescriptionWithMedicals($prescription, $medicalsList);
+                    $this->render('write_prescription', ['messages' => ['Prescription added']]);
                 } else {
                     $this->render('write_prescription', ['messages' => ['Patient with specified identity number does not exist']]);
-                    return;
                 }
+                return;
             }
             if ($this->isPost()) {
                 $this->render('write_prescription', ['messages' => ['Set all fields']]);
-                return;
             }
         }
         $this->render('write_prescription');

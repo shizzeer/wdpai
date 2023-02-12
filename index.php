@@ -18,7 +18,8 @@ Routing::get('offers', 'DefaultController');
 
 //Routing::get('appointments', 'DefaultController');
 Routing::get('patients', 'DefaultController');
-Routing::get('prescriptions', 'DefaultController');
+//Routing::get('prescriptions', 'DefaultController');
+Routing::get('prescriptions', 'PrescriptionController');
 //Routing::get('write_prescription', 'DefaultController');
 
 Routing::get('logout', 'SecurityController');
