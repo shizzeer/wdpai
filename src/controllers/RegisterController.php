@@ -32,6 +32,10 @@ class RegisterController extends AppController
             $this->render('registration', ['messages' => ['User with this email already exists']]);
             return;
         }
+        if ($this->userRepository->identityNumberExists($identityNumber)) {
+            $this->render('registration', ['messages' => ['User with this identity number already exists']]);
+            return;
+        }
         // ID is incremented automatically in database
         $userId = UserRepository::getNextAvailableUserId();
         $user = new User($userId, $name, $surname, $email,

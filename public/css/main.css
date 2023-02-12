@@ -8,6 +8,10 @@ body {
     overflow-x: hidden;
 }
 
+.error {
+    color: red;
+}
+
 #large_logo {
     text-align: left;
     font: normal normal normal 6em Gadugi;

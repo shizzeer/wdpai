@@ -8,6 +8,7 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/RegisterController.php';
 require_once 'src/controllers/AppointmentsController.php';
 require_once 'src/controllers/SettingsController.php';
+require_once 'src/controllers/PrescriptionController.php';
 
 class Routing {
     public static $routes;

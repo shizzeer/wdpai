@@ -7,7 +7,7 @@ require_once __DIR__.'/../models/AppointmentValidator.php';
 
 require_once __DIR__.'/../models/Appointment.php';
 
-class AppointmentsController extends DefaultController
+class AppointmentsController extends AppController
 {
     private AppointmentsRepository $appointmentsRepository;
 

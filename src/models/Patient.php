@@ -11,12 +11,12 @@ class Patient extends User
                                 string $email, string $password,
                                 string $dateOfBirth, string $phoneNumber,
                                 string $identityNumber, string $role,
-                                int $patientId, string $lastVisit)
+                                int $patientId, ?string $lastVisit)
     {
         parent::__construct($id, $name, $surname, $email, $password, $dateOfBirth,
             $phoneNumber, $identityNumber, $role);
         $this->patientId = $patientId;
-        $this->lastVisit = $lastVisit;
+        $this->lastVisit = $lastVisit === NULL ? '' : $lastVisit;
     }
 
     public function getPatientId(): int
