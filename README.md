@@ -6,8 +6,6 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Usage](#usage)
-* [Project Status](#project-status)
-* [Contact](#contact)
 
 ## General Information
 - Project is about managing a clinic. There is a division between patients and doctors based on users roles. After successfully logging in doctors can see 
