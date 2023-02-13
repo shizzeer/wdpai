@@ -17,7 +17,7 @@ class AppointmentsController extends AppController
         $this->appointmentsRepository = new AppointmentsRepository();
     }
 
-    function reservations()
+    public function reservations()
     {
         $appointments = array();
         if (isset($_SESSION['userId'])) {
@@ -26,7 +26,7 @@ class AppointmentsController extends AppController
         $this->render('reservations', ['appointments' => $appointments]);
     }
 
-    function appointments()
+    public function appointments()
     {
         $appointments = array();
         if (isset($_SESSION['userId'])) {
@@ -35,7 +35,7 @@ class AppointmentsController extends AppController
         $this->render('appointments', ['appointments' => $appointments]);
     }
 
-    function book()
+    public function book()
     {
         $appointmentValidator = new AppointmentValidator();
         $messages = array();
@@ -49,32 +49,27 @@ class AppointmentsController extends AppController
             return;
         }
 
-        // 1. Sprawdź czy data jest przyszła
         else if (!isset($_POST['doctor']) || !isset($_POST['date']) || !isset($_POST['time'])) {
             $messages['generalMessage'] = 'Set all required fields';
             $this->render('booking', $messages);
             return;
         }
-        // 2. Sprawdź czy data jest poprawna
         if (!$appointmentValidator->checkDate($_POST['date'])) {
             $messages['dateMessage'] = 'Set correct date';
             $this->render('booking', $messages);
             return;
         }
-        // 3. Sprawdź czy czas jest poprawny
         $incorrectTimeMsg = $appointmentValidator->checkTime($_POST['time'], $_POST['date']);
         if (!empty($incorrectTimeMsg)) {
             $messages['timeMessage'] = $incorrectTimeMsg;
             $this->render('booking', $messages);
             return;
         }
-        // 4. Sprawdź czy na wybrany dzień i porę jest miejsce
         if (!$appointmentValidator->checkAvailability($_POST['date'], $_POST['time'], $_POST['doctor'])) {
             $messages['generalMessage'] = 'There is another appointment on chosen time. Pick another one';
             $this->render('booking', $messages);
             return;
         }
-        // 5. Wszystko ok
         $messages['generalMessage'] = 'Your appointment has been booked';
         if ($_POST['comments'] === null) {
             $_POST['comments'] = '';
@@ -85,7 +80,7 @@ class AppointmentsController extends AppController
         $this->render('booking', $messages);
     }
 
-    function remove_appointment()
+    public function remove_appointment()
     {
         $data = json_decode(file_get_contents('php://input'), true);
         $appointmentId = $data['id'];

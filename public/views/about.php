@@ -9,11 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/about.css">
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
-    <!-- <link rel="stylesheet" type="text/css" href="public/css/contact.css"> -->
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>ABOUT</title>
 </head>
 
@@ -46,7 +43,6 @@
                                 <img src="/public/img/staff/doctor1.svg" class="avatar">
                             </div>
                             <div class="personal_data">
-                                <!-- Place for name and surname + short description of specialization -->
                                 <span class="name_and_surname">
                                     Dr. Evan Jordan
                                 </span><br>
@@ -63,7 +59,6 @@
                                 <img src="/public/img/staff/doctor2.svg" class="avatar">
                             </div>
                             <div class="personal_data">
-                                <!-- Place for name and surname + short description of specialization -->
                                 <span class="name_and_surname">
                                     Dr. Kristen Poole
                                 </span><br>
@@ -80,7 +75,6 @@
                                 <img src="/public/img/staff/doctor3.svg" class="avatar">
                             </div>
                             <div class="personal_data">
-                                <!-- Place for name and surname + short description of specialization -->
                                 <span class="name_and_surname">
                                     Dr. Troy Welch
                                 </span><br>
@@ -97,7 +91,6 @@
                                 <img src="/public/img/staff/doctor1.svg" class="avatar">
                             </div>
                             <div class="personal_data">
-                                <!-- Place for name and surname + short description of specialization -->
                                 <span class="name_and_surname">
                                     Dr. Joseph Knight
                                 </span><br>

@@ -12,7 +12,7 @@ class PrescriptionRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('SELECT "idPrescription" FROM dbname.public."Prescriptions"
                                                            WHERE "idDoctor" = :doctorId');
-        $stmt->bindParam(':doctorId', $doctorId);
+        $stmt->bindParam(':doctorId', $doctorId, PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['idPrescription'];
@@ -32,7 +32,7 @@ class PrescriptionRepository extends Repository
                                                     INNER JOIN dbname.public."Doctors"
                                                     ON dbname.public."Prescriptions"."idDoctor" = dbname.public."Doctors"."idDoctor"
                                                     WHERE dbname.public."Prescriptions"."idDoctor" = :doctorId');
-        $stmt->bindParam(':doctorId', $doctorId);
+        $stmt->bindParam(':doctorId', $doctorId, PDO::PARAM_INT);
         $stmt->execute();
 
         $prescriptions = array();

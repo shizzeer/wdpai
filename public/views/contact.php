@@ -9,11 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/contact.css">
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/public/css/contact.css"> -->
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>CONTACT</title>
 </head>
 
@@ -54,7 +51,6 @@
                             <a href="#" class="subject_href"><span class="subject">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem similique architecto in laudantium ad consequatur ab perferendis tempora tenetur, at dolores magni eveniet ducimus eaque nihil adipisci possimus libero. Sint.</span></a>
                         </div>
                         <div class="msg_date">2022-12-17</div>
-                        <!-- <div class="msg_delete"><img class="delete_msg" src="/public/img/delete.svg"></div> -->
                     </div>
                     <div class="divider"></div>
                 </div>

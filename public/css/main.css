@@ -4,7 +4,6 @@
 
 body {
     margin: 0;
-    /* Unikniecie overflow wynikajacego ze schowania menu */
     overflow-x: hidden;
 }
 
@@ -227,13 +226,6 @@ header {
 }
 
 @media (max-device-width: 650px) {
-    /* #settings {
-        bottom: 7em;
-    } */
-
-    /* li {
-        margin-top: 8vw;
-    } */
     .general_button {
         font-size: 2rem;
     }
@@ -261,8 +253,6 @@ header {
         transition: transform 350ms ease-out;
     }
 
-    /* jezeli data-visible jest ustawione na 
-    true to wysun menu */
     .primary-navigation[data-visible="true"] {
         transform: translateX(0%);
     }

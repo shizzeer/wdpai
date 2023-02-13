@@ -36,6 +36,9 @@
                 <input class="login_input" name="email" type="text" placeholder="email">
                 <input class="login_input" name="password" type="password" placeholder="password">
                 <button class="login_button" type="submit"><span class="buttons_text">Login</span></button>
+                <div class="sign_up_footer">
+                    <span class="sign_up_footer_txt">Don't have an account? <a href="register">Sign up</a></span>
+                </div>
             </form>
         </div>
     </div>

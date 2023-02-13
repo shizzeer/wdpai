@@ -19,7 +19,7 @@ class MedicalsRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('SELECT "idMedical" FROM dbname.public."Medicals"
                                                            WHERE "name" = :medicalName');
-        $stmt->bindParam(':medicalName', $medicalName);
+        $stmt->bindParam(':medicalName', $medicalName, PDO::PARAM_STR);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ class MedicalsRepository extends Repository
         $stmt = $this->database->connect()->prepare('SELECT "name" FROM dbname.public."Medicals"
                                                     WHERE "name" = :name');
         $medicalName = $medical->getName();
-        $stmt->bindParam(':name', $medicalName);
+        $stmt->bindParam(':name', $medicalName, PDO::PARAM_STR);
         $stmt->execute();
 
         $rows = $stmt->fetchAll();

@@ -10,18 +10,12 @@
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
     <link rel="stylesheet" type="text/css" href="/public/css/prescriptions.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>PRESCRIPTIONS</title>
 </head>
 
 <body>
     <div class="base_container">
-        <!-- <button class="mobile-nav-toggle" 
-        aria-controls="primary-navigation" 
-        aria-expanded="false">
-        </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <?php include "menu.php"; ?>
@@ -49,15 +43,6 @@
                     </form>
                 </div>
                 <div class="prescriptions">
-<!--                    <div>-->
-<!--                        --><?php
-//                            if (isset($messages)) {
-//                                foreach ($messages as $message) {
-//                                    print_r($message);
-//                                }
-//                            }
-//                        ?>
-<!--                    </div>-->
                     <?php foreach ($prescriptions as $prescription): ?>
                         <div class="prescription">
                             <table>
@@ -85,8 +70,6 @@
                                             </div><br><br>
                                             <div class="medications_list">
                                                 <div class="medicine"><?= str_replace("\n", "<br>", $prescription->getMedicals()) ?></div>
-<!--                                                <div class="medicine">Second medicine</div>-->
-<!--                                                <div class="medicine">Third medicine</div>-->
                                             </div>
                                         </div>
                                     </td>

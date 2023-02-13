@@ -2,25 +2,21 @@
 
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../models/Appointment.php';
-require_once 'UserRepository.php';
 require_once 'Repository.php';
 require_once 'DoctorRepository.php';
 
 class AppointmentsRepository extends Repository
 {
-    private $userRepository;
     private DoctorRepository $doctorRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->userRepository = new UserRepository();
         $this->doctorRepository = new DoctorRepository();
     }
 
-    function getPatientAppointments(int $userId): array
+    public function getPatientAppointments(int $userId): array
     {
-        /* Pobierz wszystkie wizyty przypisane do pacjenta */
         $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Appointments" 
                                                     INNER JOIN dbname.public."Patients"
                                                     ON dbname.public."Appointments"."idPatient" = dbname.public."Patients"."idPatient"
@@ -33,7 +29,6 @@ class AppointmentsRepository extends Repository
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
-//        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $appointments = array();
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -51,7 +46,7 @@ class AppointmentsRepository extends Repository
         return $appointments;
     }
 
-    function getDoctorAppointments(int $userId): array
+    public function getDoctorAppointments(int $userId): array
     {
         $doctorId = $this->doctorRepository->getDoctorIdByUserId($userId);
         $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Appointments"
@@ -80,7 +75,7 @@ class AppointmentsRepository extends Repository
         return $appointments;
     }
 
-    function getAppointmentsByDateTimeAndDoctorSurname(string $surname, string $date, string $time)
+    public function getAppointmentsByDateTimeAndDoctorSurname(string $surname, string $date, string $time)
     {
         $stmt = $this->database->connect()->prepare('SELECT date, time FROM dbname.public."Appointments"
                                              INNER JOIN dbname.public."Doctors"
@@ -97,9 +92,8 @@ class AppointmentsRepository extends Repository
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function addAppointment(Appointment $appointment)
+    public function addAppointment(Appointment $appointment)
     {
-        /* Dodaj wizyte przypisana do okreslonego uzytkownika */
         $stmt = $this->database->connect()->prepare('INSERT INTO dbname.public."Appointments" ("date", "time", "price", "comments", "idPatient",
                                                     "idDoctor")
                                                     VALUES (?, ?, ?, ?, ?, ?);');
@@ -113,7 +107,7 @@ class AppointmentsRepository extends Repository
         ]);
     }
 
-    function removeAppointment(int $appointmentId): bool
+    public function removeAppointment(int $appointmentId): bool
     {
         $stmt = $this->database->connect()->prepare('DELETE FROM dbname.public."Appointments" 
                                                         WHERE "idAppointment" = :appointmentId');
