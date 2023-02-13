@@ -28,7 +28,7 @@ class PrescriptionController extends AppController
         $this->medicalsRepository = new MedicalsRepository();
     }
 
-    function prescriptions()
+    public function prescriptions()
     {
         if (isset($_SESSION['userId'])) {
             $doctorId = $this->doctorRepository->getDoctorIdByUserId($_SESSION['userId']);
@@ -38,7 +38,7 @@ class PrescriptionController extends AppController
         }
     }
 
-    function write_prescription()
+    public function write_prescription()
     {
         if (isset($_SESSION['userId'])) {
             if (isset($_POST['patient_id_number']) && isset($_POST['medicals']) &&

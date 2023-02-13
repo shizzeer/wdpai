@@ -9,11 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/contact.css">
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/public/css/contact.css"> -->
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>CONTACT</title>
 </head>
 

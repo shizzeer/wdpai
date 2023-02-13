@@ -9,9 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>DISCOUNTS</title>
 </head>
 
@@ -37,7 +35,7 @@
                     <div class="offer_content">
                         <div class="offer_content_header">
                             <span class="offer_name">
-                                OFFER NAME TO GET DISCOUNT TO TO GET DISCOUNT TO
+                                OFFER NAME TO GET DISCOUNT TO
                             </span>
                         </div>
                         <div class="offer_content_internal">

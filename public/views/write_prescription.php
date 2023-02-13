@@ -11,18 +11,12 @@
     <link rel="stylesheet" type="text/css" href="/public/css/write_prescription.css">
     <link rel="stylesheet" type="text/css" href="/public/css/form.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <title>PRESCRIPTIONS</title>
 </head>
 
 <body>
     <div class="base_container">
-        <!-- <button class="mobile-nav-toggle" 
-        aria-controls="primary-navigation" 
-        aria-expanded="false">
-        </button> -->
         <nav class="primary-navigation" data-visible="false">
             <span class="small_logo">Genesis Clinic</span>
             <?php include "menu.php"; ?>

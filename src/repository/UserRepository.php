@@ -70,18 +70,6 @@ class UserRepository extends Repository
         return $row["max_id"] + 1;
     }
 
-    public function getUserSession(int $userId)
-    {
-        $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Sessions" 
-                                                           WHERE "idUser" = :userId');
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $session = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $session;
-    }
-
     public function canRegisterUser(string $email): bool
     {
         $stmt = $this->database->connect()->prepare('SELECT email FROM dbname.public."Users"

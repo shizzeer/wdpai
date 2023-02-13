@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Doctor.php';
 
 class DoctorRepository extends Repository
 {
-    function getAllDoctors(): array
+    public function getAllDoctors(): array
     {
         $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Doctors"
                                                     INNER JOIN dbname.public."Users"
@@ -24,7 +24,7 @@ class DoctorRepository extends Repository
         return $doctors;
     }
 
-    function getDoctorNameById(int $doctorId): string
+    public function getDoctorNameById(int $doctorId): string
     {
         $stmt = $this->database->connect()->prepare('SELECT name, surname FROM dbname.public."Doctors"
                                                             INNER JOIN dbname.public."Users"
@@ -39,7 +39,7 @@ class DoctorRepository extends Repository
         return $row['name'].' '.$row['surname'];
     }
 
-    function getDoctorIdByUserId(int $userId): int
+    public function getDoctorIdByUserId(int $userId): int
     {
         $stmt = $this->database->connect()->prepare('SELECT "idDoctor" FROM dbname.public."Doctors"
                                                            WHERE "idUser" = :userId');
@@ -50,7 +50,7 @@ class DoctorRepository extends Repository
         return $row['idDoctor'];
     }
 
-    function getDoctorIdBySurname(string $surname): int
+    public function getDoctorIdBySurname(string $surname): int
     {
         $stmt = $this->database->connect()->prepare('SELECT "idDoctor" FROM dbname.public."Doctors"
                                                             INNER JOIN dbname.public."Users"

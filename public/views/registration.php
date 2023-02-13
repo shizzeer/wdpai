@@ -21,6 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./public/css/registration.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/footer.css">
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/register-form-validation.js" defer></script>
     <title>REGISTER</title>
@@ -54,11 +55,10 @@
                 <input type="text" name="surname" placeholder="surname" required>
                 <input type="email" name="email" placeholder="email" required>
                 <input type="password" name="password" placeholder="password" required>
-                <input class="date_of_birth" type="text" name="date_of_birth" placeholder="date of birth (DD/MM/YYYY)" required>
-<!--                <input type="text" name="address" placeholder="address">-->
+                <input class="date_of_birth" type="text" name="date_of_birth" placeholder="date of birth (YYYY-MM-DD)" required>
                 <input type="text" name="identity_number" placeholder="identity number" required>
                 <input type="tel" name="phone_number" placeholder="phone number" required><br>
-                <button class="sign_up_button" style="cursor:pointer">
+                <button class="sign_up_button">
                     <span id="sign_up_text">Sign Up</span>
                 </button>
             </form>

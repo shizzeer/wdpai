@@ -55,7 +55,6 @@ body {
 }
 
 .form_header {
-    /*margin-top: 0.3vh;*/
     padding: 20px;
 }
 
@@ -98,11 +97,18 @@ input::placeholder {
     border-radius: 47px;
     margin-left: 5vh;
     margin-top: -3vh;
+    cursor: pointer;
 }
 
 #sign_up_text {
     color: white;
     font-size: 2em;
+}
+
+a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #1E7ED4;
 }
 
 .sign_up_footer {
@@ -115,12 +121,6 @@ input::placeholder {
     font-weight: bold;
     color: #7B7B7B;
     font-size: 1.3em;
-}
-
-a {
-    font-weight: normal;
-    text-decoration: none;
-    color: #1E7ED4;
 }
 
 .logo_mobile {

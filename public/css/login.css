@@ -10,6 +10,7 @@
 
 body {
     margin: 0;
+    font-family: 'Segoe UI';
 }
 
 #large_logo {
@@ -71,6 +72,7 @@ form {
     margin: 1em;
     color: white;
     line-height: 2.5em;
+    cursor: pointer;
 }
 
 .login_input {
@@ -87,6 +89,23 @@ form {
     font: normal normal normal 20px Segoe UI;
     letter-spacing: 0px;
     color: #FFFFFF;
+}
+
+a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #1E7ED4;
+}
+
+.sign_up_footer {
+    margin-top: 1vh;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.sign_up_footer_txt {
+    font-weight: bold;
+    color: #7B7B7B;
 }
 
 @media (min-width: 40em) {

@@ -8,7 +8,6 @@
     margin: auto;
     text-align: center;
     padding: 2%;
-    /* overflow-y: auto; */
 }
 
 @media (max-device-width: 650px) {

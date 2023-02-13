@@ -5,7 +5,7 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
 class PatientRepository extends Repository
 {
-    function getPatientById(int $patientId): Patient
+    public function getPatientById(int $patientId): Patient
     {
         $stmt = $this->database->connect()->prepare('SELECT * FROM dbname.public."Patients"
                                                     INNER JOIN dbname.public."Users"
@@ -13,7 +13,7 @@ class PatientRepository extends Repository
                                                     INNER JOIN dbname.public."User_Details"
                                                     ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
                                                     WHERE "idPatient" = :patientId');
-        $stmt->bindParam(':patientId', $patientId);
+        $stmt->bindParam(':patientId', $patientId, PDO::PARAM_INT);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -23,7 +23,7 @@ class PatientRepository extends Repository
         return $patient;
     }
 
-    function getPatientIdByUserId(int $userId): int
+    public function getPatientIdByUserId(int $userId): int
     {
         $stmt = $this->database->connect()->prepare('SELECT "idPatient" FROM dbname.public."Patients"
                                                     WHERE "idUser" = :userId');
@@ -34,7 +34,7 @@ class PatientRepository extends Repository
         return $row['idPatient'];
     }
 
-    function getPatientIdByIdentityNumber(string $identityNumber): int
+    public function getPatientIdByIdentityNumber(string $identityNumber): int
     {
         $stmt = $this->database->connect()->prepare('SELECT "idPatient" FROM dbname.public."Patients"
                                                     INNER JOIN dbname.public."Users"
@@ -42,14 +42,14 @@ class PatientRepository extends Repository
                                                     INNER JOIN dbname.public."User_Details"
                                                     ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
                                                     WHERE dbname.public."User_Details"."identityNumber" = :identityNumber');
-        $stmt->bindParam(':identityNumber', $identityNumber);
+        $stmt->bindParam(':identityNumber', $identityNumber, PDO::PARAM_STR);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row['idPatient'];
     }
 
-    function getPatientNameByUserId(int $userId): string
+    public function getPatientNameByUserId(int $userId): string
     {
         $stmt = $this->database->connect()->prepare('SELECT "name", "surname" FROM dbname.public."Patients"
                                                     INNER JOIN dbname.public."Users"
@@ -57,14 +57,14 @@ class PatientRepository extends Repository
                                                     INNER JOIN dbname.public."User_Details"
                                                     ON dbname.public."Users"."idUserDetails" = dbname.public."User_Details"."idUserDetails"
                                                     WHERE dbname.public."Users"."idUser" = :userId');
-        $stmt->bindParam(':userId', $userId);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row['name'].' '.$row['surname'];
     }
 
-    function addPatient(User $user)
+    public function addPatient(User $user)
     {
         // Patient is added right after registering process so there is no need to assign any
         // value to the lastVisit field

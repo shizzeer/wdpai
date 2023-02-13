@@ -13,33 +13,33 @@ class SettingsRepository extends Repository
         $this->userRepository = new UserRepository();
     }
 
-    function updateNameAndSurname(int $userId, string $name, string $surname)
+    public function updateNameAndSurname(int $userId, string $name, string $surname)
     {
         $this->userRepository->updateUserDetailsData($userId, "name", $name);
         $this->userRepository->updateUserDetailsData($userId, "surname", $surname);
     }
 
-    function updateEmail(int $userId, string $newEmail)
+    public function updateEmail(int $userId, string $newEmail)
     {
         $this->userRepository->updateUserData($userId, "email", $newEmail);
     }
 
-    function updatePassword(int $userId, string $newPassword)
+    public function updatePassword(int $userId, string $newPassword)
     {
         $this->userRepository->updateUserData($userId, "password", $newPassword);
     }
 
-    function updateDateOfBirth(int $userId, string $newDateOfBirth)
+    public function updateDateOfBirth(int $userId, string $newDateOfBirth)
     {
         $this->userRepository->updateUserDetailsData($userId, "dateOfBirth", $newDateOfBirth);
     }
 
-    function updatePhoneNumber(int $userId, string $phoneNumber)
+    public function updatePhoneNumber(int $userId, string $phoneNumber)
     {
         $this->userRepository->updateUserDetailsData($userId, "phoneNumber", $phoneNumber);
     }
 
-    function updateIdentityNumber(int $userId, string $identityNumber)
+    public function updateIdentityNumber(int $userId, string $identityNumber)
     {
         $this->userRepository->updateUserDetailsData($userId, "identityNumber", $identityNumber);
     }

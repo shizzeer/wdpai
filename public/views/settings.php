@@ -9,11 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/css/settings.css">
     <link rel="stylesheet" type="text/css" href="/public/css/main.css">
     <link rel="stylesheet" type="text/css" href="/public/css/offers.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/public/css/contact.css"> -->
     <script src="https://kit.fontawesome.com/ec121d0778.js" crossorigin="anonymous"></script>
-    <!-- defer -> zaladuj skrypt dopiero w momencie jak zaladuje sie cala strona -->
-    <!-- w ten sposob mamy dostep do elementow html -->
-    <script src="/public/nav.js" defer></script>
+    <script src="/public/js/nav.js" defer></script>
     <script src="/public/js/settings-validation.js" defer></script>
     <title>SETTINGS</title>
 </head>
@@ -36,7 +33,6 @@
             </header>
             <section class="column_content">
                 <div class="settings_container">
-<!--                    <form method="POST" action="settings">-->
                         <div class="settings_header">
                             Account settings
                         </div>
@@ -44,7 +40,6 @@
                         <form id="name_setting_form" method="POST" action="settings">
                             <div class="setting">
                                 <div class="key">Name and surname</div>
-                                <!-- <div class="value">Joe Doe</div> -->
                                 <div class="value"><input type="text" name="name" value="<?php echo $settings->getAccountSettings()['name'] ?>"
                                                           class="setting_in"></div>
                                 <div class="save_container"><button type="submit" name="save_name" class="save" disabled>Save</button></div>
@@ -95,7 +90,6 @@
                             </div>
                         </form>
                         <div class="divider"></div>
-<!--                    </form>-->
                 </div>
             </section>
         </main>
